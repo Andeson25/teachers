@@ -1,0 +1,8 @@
+<div>
+  <button [routerLink]="['../']">Назад</button>
+  <form class="d-flex main flex-column align-items-center" [formGroup]="teachingProgramContainerForm" (submit)="updateContainer()">
+    <input type="text" formControlName="name">
+    <button type="submit">Оновити</button>
+  </form>
+  <app-teaching-program (event)="load($event)" *ngFor="let one of programs" [program]="one" [container]="teachingProgramContainer"></app-teaching-program>
+</div>

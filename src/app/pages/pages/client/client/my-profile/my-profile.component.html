@@ -1,0 +1,160 @@
+<div *ngIf="isAuth" class="container-fluid">
+  <div class="main_form">
+    <label class="name_label" *ngIf="editable">
+      <img src="../../../../../../assets/svg/edit.svg" class="" alt="" *ngIf="editable">
+      <span *ngIf="editable">Редагувати прізвище, ім'я та по-батькові</span>
+      <div class="d-flex  flex-column  flex-md-row">
+        <input [disabled]="!editable" [(ngModel)]="user.lastname" class="name-lastname-surname border "
+               [ngClass]="{'border-0':!editable, 'border border-right-0 ': editable}" type="text">
+        <input [disabled]="!editable" [(ngModel)]="user.name" class="name-lastname-surname border "
+               [ngClass]="{'border-0':!editable, 'border border-left-0 border-right-0': editable}" type="text">
+
+        <input [disabled]="!editable" [(ngModel)]="user.surname" class="name-lastname-surname border "
+               [ngClass]="{'border-0':!editable, 'border border-left-0': editable}"
+               type="text">
+      </div>
+    </label>
+    <div *ngIf="!editable">
+      <h2>{{user.lastname+' '+user.name+' '+user.surname}}</h2>
+    </div>
+    <div class="index_form_container d-flex m-0 row align-items-start">
+      <form #userImage class="user_photo col-lg-5 pl-0 pr-0">
+        <img #mainImage [src]="(user.image|ImgPipe:mainImage)" alt="{{user.name}}">
+        <label class="addImg" *ngIf="editable" for="img">
+          <span class="d-flex flex-column align-items-center justify-content-center"> <img
+            src="../../../../../../assets/svg/photo-camera.svg" alt="Змінити фото"><p>Змінити фото</p></span>
+          <input [disabled]="!editable" (change)="readUrl($event)" class="d-none" name="file" id="img" type="file">
+        </label>
+      </form>
+      <div class="user_main_info pl-0 pr-0  col">
+        <div class="container_btn d-flex justify-content-centre justify-content-lg-end align-items-start">
+          <button (click)="editAndUpdate(userImage)" type="submit" class="m-lg-0 m-auto" *ngIf="editable">Зберегти
+            зміни
+          </button>
+          <button (click)="edit()" class="m-lg-0 m-auto" *ngIf="!editable">Редагувати профіль</button>
+        </div>
+        <div class="user_info">
+          <div class="border-0 pb-0" *ngIf="editable">
+            <label class="row  spec-list" [ngClass]="{'border-0 d-flex ':editable}">
+             <span class="col-md-6">
+              <img src="../../../../../../assets/svg/edit.svg" class="" alt="" *ngIf="editable">
+           Спеціалізації:</span>
+              <input [disabled]="!editable" (keyup.enter)="addSpec(inputSpec)" class="" #inputSpec
+                     [ngClass]="{'border-0':!editable, 'border col-md-6': editable}"
+                     type="text" placeholder="Введіть та додайте ">
+              <img class="addImgSpec" (click)="addSpec(inputSpec)" src="../../../../../../assets/svg/plus.svg" alt="">
+            </label>
+            <h3 (click)="deleteSpec(user.specializations.indexOf(spec))" class="one_spec border-0  "
+                *ngFor="let spec of user.specializations">
+              <img src="../../../../../../assets/svg/cancel-button.svg" alt="delete"> {{spec.name}}</h3>
+          </div>
+          <div class="row  " style="padding: 7px 0 0;" *ngIf="!editable" #spec>
+            <span style=" font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 30px;" class="col-md-6 pl-0 d-flex align-items-center">Спеціалізації:</span>
+            <div class=" col-md-6 p-0">
+              <p style="padding: 0 1vw;height: 30px; margin-bottom: 0;" class="d-inline-block col-md-12"
+                 *ngFor="let specialization of user.specializations;let i=index">
+                <span>{{specialization.name|nou}}</span><span style="margin-right: 5px;" class="d-inline-block"
+                                                 *ngIf="i!=user.specializations.length-1">, </span></p>
+            </div>
+          </div>
+          <label class="row" [ngClass]="{'d-flex ':!editable,'border-0':editable}">
+            <span class="col-md-6  " [ngClass]="{'pl-0':!editable}">
+             <img src="../../../../../../assets/svg/edit.svg" class="" alt="" *ngIf="editable">
+             Місце роботи
+            </span>
+
+            <input [disabled]="!editable" class="col-md-6 placeOfWork"
+                   [ngClass]="{'border-0  w-100':!editable, 'border ': editable}"
+                   [(ngModel)]="user.placeOfWork.name"
+                   type="text">
+          </label>
+          <label class="row" [ngClass]="{'border-0':editable,' d-flex ':!editable}">
+            <span class="col-md-6" [ngClass]="{'pl-0':!editable}">
+              <img src="../../../../../../assets/svg/edit.svg" class="" alt="" *ngIf="editable">
+              Номер телефону:
+            </span>
+            <input [disabled]="!editable" [(ngModel)]="user.phone" class="col-md-6"
+                   [ngClass]="{'border-0 ':!editable, 'border': editable}" [textMask]='{mask: this.telPattern}'
+                   type="text">
+          </label>
+          <label class="row" [ngClass]="{'border-0':editable,' d-flex ':!editable}">
+            <span class="col-md-6" [ngClass]="{'pl-0':!editable}">
+              <img src="../../../../../../assets/svg/edit.svg" class="" alt="" *ngIf="editable">
+              Посилання на Facebook:
+            </span>
+            <input *ngIf="editable" [disabled]="!editable" [(ngModel)]="user.facebookLink" class="col-md-6"
+                   [ngClass]="{'border-0 ':!editable, 'border': editable}"
+                   type="text">
+            <a *ngIf="!editable" target="_blank" style="padding: 1vh 1vw;" class="col-md-6"
+               href="{{user.facebookLink}}">Посилання на фейсбук</a>
+          </label>
+          <label class="row" [ngClass]="{'border-0':editable,' d-flex ':!editable}">
+            <span class="col-md-6" [ngClass]="{'pl-0':!editable}">
+              <img src="../../../../../../assets/svg/edit.svg" class="" alt="" *ngIf="editable">
+              Посада:
+            </span>
+            <span style="padding: 1vh 1vw" class="col-md-6" *ngIf="!editable">
+              {{translateIncumbency(user.incumbency)}}
+            </span>
+            <select *ngIf="editable" class="col-md-6"
+                    style="background: transparent; font-size: 16px; line-height: 30px; height: 48.5px; outline: none; font-family: OpenSansBold;padding: 1vh 1vw;"
+                    [(ngModel)]="user.incumbency" name="" id="">
+              <option style="padding: 1vh 1vw;" value="DIRECTOR">Директор</option>
+              <option style="padding: 1vh 1vw;" value="TEACHER">Вчитель</option>
+              <option style="padding: 1vh 1vw;" value="COUCH_MENTOR">Коуч</option>
+              <option style="padding: 1vh 1vw;" value="HEAD_TEACHER">Завуч</option>
+              <option style="padding: 1vh 1vw;" value="OTHER">Інша</option>
+            </select>
+          </label>
+
+        </div>
+      </div>
+    </div>
+    <h2>Короткий опис</h2>
+    <textarea [disabled]="!editable" [(ngModel)]="user.information"
+              [ngClass]="{'border-0':!editable, 'border': editable}" type="text"
+              placeholder="Напишіть короткий опис про себе"></textarea>
+
+    <h2>Моя галерея</h2>
+    <div class="gallery_wrapper d-flex flex-wrap">
+
+      <div  style="position: relative " (click)="showFullSizeImg(image,modalContainer)" class="  pdd col-md-6 col-lg-3" *ngFor="let image of user.files">
+        <img src="../../../../../../assets/svg/cancel-button.svg" alt="delete" *ngIf="editable"
+             (click)="deleteImg(image.id)" class="delete_photo">
+        <div (click)="showFullSizeImg(image,modalContainer)" class="item_photo  " #divImage data-toggle="modal" data-target="#exampleModal"
+
+             [style.backgroundImage]="'url('+ (image.path|ImgPipe:divImage) +')'">
+          <div (click)="showFullSizeImg(image,modalContainer)" class="  hover d-flex align-items-center justify-content-center" *ngIf="!editable">
+            <img src="../../../../../../assets/svg/search.svg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="pdd col-md-6 col-lg-3 " #kek *ngIf="editable">
+        <div class="item_photo  last_photo ">
+          <form #formForImage class="d-inline-flex align-items-center justify-content-center p-0">
+            <label for="file" class="add d-flex justify-content-center align-items-center"><img id="addImg"
+                                                                                                src="../../../../../../assets/svg/plus.svg"
+                                                                                                alt="">
+              <input [disabled]="!editable" type="file" name="multipartFile" id="file" (change)="addFoto(formForImage)"
+                     accept="image/*"
+                     class="d-none">
+            </label>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true" #modalContainer>
+    <div class="modal-dialog  " role="document">
+      <div class="modal-content " style="background: transparent; border: none">
+        <img [src]="bigImageSrc" #bigImage alt="" class="modal-img  ">
+        <img data-dismiss="modal" class="cancel-model-img" src="../../../../../../assets/svg/cancel-button.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

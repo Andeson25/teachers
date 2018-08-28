@@ -1,0 +1,246 @@
+.container-fluid{
+  min-height: 100vh;
+  width: 92%;
+  padding: 30px 0 110px 0;
+  margin: 0 auto;
+}
+pre{
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  overflow: visible;
+}
+ h2{
+  font-size: 24px;
+  line-height: 24px;
+  font-family: OpenSansBold;
+}
+.container-fluid > img{
+  width: auto;
+  height: 50vh;
+  margin: 0 auto 30px 0;
+  display: block;
+}
+.content p{
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 24px;
+}
+.content {
+  width: 70%;
+  margin: 0 auto 0 0;
+  margin-bottom: 90px;
+}
+.user-stars .hover{
+  cursor: pointer;
+}
+a{
+  color: #00a3c6;
+}
+a:hover{
+  color: #0184a0;
+  outline-color: #0184a0;
+}
+
+.user-stars .hover:first-child:hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:first-child:hover ~ .hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(2):hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(2):hover ~ .hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(3):hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(3):hover ~ .hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(4):hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(4):hover ~ .hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(5):hover polygon {
+  fill: #ffcf00;
+}
+
+.user-stars .hover:nth-child(5):hover ~ .hover polygon {
+  fill: #ffcf00;
+}
+
+
+hr {
+  margin: 15px 0 15px 0;
+  border-color: #CBCBCB;
+  border-width: .3vh;
+}
+svg {
+  height: 100%;
+}
+
+
+svg polygon{
+  fill: grey;
+}
+.main-rating svg:not(:last-child){
+  margin-right: 5%;
+}
+.main-rating{
+  margin-right: 100px;
+  height: 90px;
+  width: 190px;
+}
+.your-rating svg:not(:first-child){
+  padding-right: 5%;
+}
+.your-rating{
+  height: 90px;
+  width: 190px;
+}
+button{
+  display: flex;
+  font-family: OpenSansBold;
+  font-size: 1rem;
+  background: #00a3c6;
+  color: #ffffff;
+  border: none;
+  padding: 0 3vw;
+  align-self: flex-end;
+  margin-top: 3vh;
+  height: 5vh;
+  cursor: pointer;
+}
+button:hover{
+  background: #0184a0;
+}
+.not-autorized{
+  padding: 5vh 1vw;
+  margin: 5vh auto 0;
+  justify-self: center;
+  height: auto;
+  width: 70%;
+  background: white;
+  border: 2px solid #b9b9b9;
+}
+.not-autorized h2{
+  text-align: center;
+  font-size: 1.3rem;
+  width: 60%;
+}
+.not-autorized button{
+  margin-top: 1vh;
+  align-self: center;
+}
+.text-area{
+  margin-top: 30px;
+}
+.text-coment{
+  margin-top: 25px;
+}
+.write-coment div a {
+  height: auto;
+}
+
+.write-coment div a span {
+  height: 30px !important;
+  width: 30px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 25%;
+}
+.user-foto{
+  margin-right: 15px;
+  height: 30px !important;
+  width: 30px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 25%;
+}
+.write-coment{
+  padding: 0;
+  margin-top: 2.5vh;
+  width: 100%;
+}
+.write-coment div textarea{
+  font-family: OpenSans;
+  font-size: 15px;
+  line-height: 22px;
+  width: 100%;
+  resize: none;
+  height: 15vh;
+  box-sizing: border-box;
+  border: 2px solid #b9b9b9;
+  border-radius: 5px;
+  padding-top: 1vh;
+  padding-left: 1vw;
+  outline: none;
+}
+.metadata h5{
+  color: #515151;
+  font-size: 1rem;
+  margin: 0 .7vw 0 .2vw ;
+}
+.metadata{
+  font-family: OpenSansLight;
+  margin-top: .5vh;
+  margin-bottom: 1vh;
+}
+.coments h2{
+
+  font-family: OpenSansBold;
+  font-size: 2rem;
+}
+.coments  a{
+  font-family: OpenSans;
+}
+
+.metadata img {
+  height: 15px;
+  width: 15px;
+  filter: invert(50%);
+}
+.metadata img:not(:first-child){
+  margin-left: 15px;
+}
+.stars{
+  margin-bottom: 50px;
+}
+.yellow  polygon{
+  fill: #ffcf00;
+}
+@media (max-width: 767.98px) {
+  .main-rating{
+    margin-right: 0;
+  }
+  .container-fluid > img {
+    width: 100%;
+    height: auto;
+  }
+  .content{
+    width: 100% !important;
+  }
+  pre{
+    margin: 0!important;
+    white-space: pre-wrap!important;
+    white-space: -moz-pre-wrap!important;
+    white-space: -o-pre-wrap!important;
+    word-wrap: break-word!important;
+    overflow: visible!important;
+    width: 100% !important;
+  }
+}

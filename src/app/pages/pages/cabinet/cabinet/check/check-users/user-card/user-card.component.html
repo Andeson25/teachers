@@ -1,0 +1,18 @@
+<div class="cont">
+  <figure>
+    <img src="{{user.image|ImgPipe}}" alt="{{user.name+' '+user.lastname}}">
+  </figure>
+  <div class="content d-flex flex-column align-items-center justify-content-start">
+    <h1 class="text-center w-100">{{user.lastname+' '+user.name+' '+user.surname}}</h1>
+    <div style="width: 90%" *ngFor="let inc of user.specializations;let i=index" class="position-relative">
+    <input placeholder="Введіть"  type="text" [(ngModel)]="user.specializations[i].name" [value]="user.specializations[i].name">
+      <img src="../../../../../../../../assets/svg/cancel-button.svg" (click)="deleteSpec(i)" style="cursor: pointer;position: absolute;height: 25px; width: auto; right: -10px; top: calc(50% - 12.5px)" alt="видалити">
+    </div>
+    <button (click)="addSpec()">+спеціалізація</button>
+    <input type="text" [(ngModel)]="user.placeOfWork.name" [value]="user.placeOfWork.name" >
+    <label class="d-flex justify-content-center mt-4 mb-4 w-100 align-items-center" style="font-family: OpenSans; font-size: 18px; line-height: 24px;">
+    <input type="checkbox" [checked]="user.role=='MODERATOR'"  #chModerator style="width: auto" class="mr-4"> Модератор
+    </label>
+    <button (click)="send(chModerator)">Підтвердити</button>
+  </div>
+</div>

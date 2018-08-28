@@ -1,0 +1,19 @@
+button{
+  width: 100%;
+  padding: 10px 10px;
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #00a3c6;
+  color: white;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  height: 68px;
+}
+.cont{
+  width: 100%;
+}
+label:hover, button:hover, input[type='submit']:hover {
+  background-color: #0184a0;
+}

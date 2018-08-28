@@ -1,0 +1,16 @@
+<div class="main mt-4 mb-4">
+  <form class="d-flex flex-column align-items-center" [formGroup]="teachingProgramForm" (submit)="updateTeachingProgram(imageForm)" #imageForm>
+    <h1>Навчальна програма</h1>
+    <input  type="text" formControlName="name">
+    <input (change)="getFileName(file)"  #file  class="d-none" id="file" type="file" name="file">
+    <form class="w-100 mb-4 d-flex justify-content-center" formGroupName="container">
+    <select formControlName="id">
+      <option *ngFor="let one of tPC" [value]="one.id">{{one.name}}</option>
+    </select>
+    </form>
+    <h2 class="mb-1 mt-1">{{fileName}}</h2>
+    <label class="mb-4" for="file">Змінити файл</label>
+    <button type="submit">Оновити</button>
+  </form>
+  <!--<button [routerLink]="['..','container']">Back</button>-->
+</div>

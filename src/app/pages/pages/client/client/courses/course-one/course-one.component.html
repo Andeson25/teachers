@@ -1,0 +1,407 @@
+<div class="container-fluid position-relative">
+  <img *ngIf="user.role=='MODERATOR'" class="position-absolute delete" style="height: 25px; width: 25px; top: 30px; right: 0; cursor: pointer; z-index: 5" (click)="delete()" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+  <h2>{{course.header}}</h2>
+  <img src="{{course.image|ImgPipe}}" alt="{{course.header}}">
+  <div class="content">
+    <h2>Інформація про курс</h2>
+  <pre style="font-size: 18px; line-height: 24px; font-family: OpenSans;">{{course.description}}</pre>
+    <a href="{{course.link}}" style="font-family: OpenSans; font-size: 18px; line-height: 24px;">Посилання на курс</a>
+  </div>
+  <hr>
+  <div class="stars d-flex flex-column flex-md-row justify-content-md-center justify-content-center align-items-md-start align-items-center">
+    <div class="main-rating d-flex flex-column align-items-center   " >
+      <h2>Рейтинг курсу</h2>
+      <div class="d-flex h-100 w-100 justify-content-center">
+        <svg  [ngClass]="{'yellow':course.rating>=1}"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg  version="1.1" [ngClass]="{'yellow':course.rating>=2}" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg   version="1.1" [ngClass]="{'yellow':course.rating>=3}" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg  [ngClass]="{'yellow':course.rating>=4}"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg  [ngClass]="{'yellow':course.rating>=5}"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+      </div>
+    </div>
+    <div class="your-rating d-flex flex-column align-items-center">
+      <h2>Ваша оцінка</h2>
+      <div class="d-flex flex-row-reverse user-stars h-100 w-100 justify-content-center">
+        <svg [ngClass]="{'yellow':course.userRating>=5,'hover':course.userRating==0}" (click)="vote(5)"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg [ngClass]="{'yellow':course.userRating>=4,'hover':course.userRating==0}"  (click)="vote(4)"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg [ngClass]="{'yellow':course.userRating>=3,'hover':course.userRating==0}" (click)="vote(3)"   version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg [ngClass]="{'yellow':course.userRating>=2,'hover':course.userRating==0}" (click)="vote(2)"   version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg  [ngClass]="{'yellow':course.userRating>=1,'hover':course.userRating==0}" (click)="vote(1)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="{'d-flex':isAuth==false, 'd-none': isAuth==true}"
+       class="not-autorized  flex-column align-items-center justify-content-center"><h2>Переглядати та
+    залишати коментарі можуть лише зареєстровані користувачі </h2>
+    <button routerLink="/sign-in">Увійти</button>
+  </div>
+  <div [ngClass]="{'d-block':isAuth==true, 'd-none': isAuth==false}" class=" coments">
+    <h2>Коментарі</h2>
+    <hr>
+    <div *ngIf="course.comments.length!=0">
+      <div class="cont position-relative" *ngFor="let two of course.comments">
+        <img *ngIf="user.role=='MODERATOR'" class="position-absolute delete" style="height: 25px; width: 25px; top: 0; right: 0; cursor: pointer; z-index: 5" (click)="deleteComment(two)" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+        <div class="metadata d-flex align-items-center text-coment">
+          <a class="d-flex align-items-center"
+             href="">
+                <span
+                  class=" align-self-center rounded-circle user-foto"
+                  [style.backgroundImage]="'url('+ (two.from.image|ImgPipe) +')'">
+
+                </span>
+            <p class="mb-0">{{two.from.name+" "+two.from.lastname}}</p>
+          </a>
+          <img src="../../../../../../../assets/svg/time.svg" class="" alt="time">
+          <h5>{{two.datetime|date}}</h5>
+        </div>
+        <div class="coment">
+          <pre style="margin-left: 47px; font-size: 18px; line-height: 24px; font-family: OpenSans; ">{{two.text}}</pre>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <div *ngIf="course.comments.length==0">
+      <h2>Немає коментарів</h2>
+    </div>
+    <div class="write-coment d-flex flex-column  ">
+      <div class="d-flex text-area">
+        <a class="d-flex align-items-start" href=""><span
+          class="  rounded-circle user-foto" [style.backgroundImage]="'url('+ (user.image|ImgPipe) +')'"></span></a>
+        <textarea name="" id="" #idSendTextAreaComment></textarea>
+      </div>
+      <button (click)="sendComment(idSendTextAreaComment)">Опублікувати</button>
+    </div>
+</div>
+</div>

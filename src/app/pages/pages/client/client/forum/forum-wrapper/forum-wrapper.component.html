@@ -1,0 +1,8 @@
+<div class="heading d-flex align-items-centre justify-content-between">
+  <h2>ФОРУМ</h2>
+  <button routerLink="/add-forum">+Додати тему</button>
+</div>
+<div *ngFor="let forumSectionContainer of forumSectionContainers">
+  <app-forum-section-container (forumContainerDelete)="delete($event)" *ngIf="forumSectionContainer.sections&&forumSectionContainer.sections.length>0"
+                               [forumSectionContainer]="forumSectionContainer"></app-forum-section-container>
+</div>

@@ -1,0 +1,20 @@
+<div class="container  pt-5 pb-5 pl-0 pr-0 ">
+  <h2 class="text-center">
+    Оновлення статті
+  </h2>
+  <form class="container row  m-0" [formGroup]="articleForm" (ngSubmit)="addArticle(artJson)" #artJson>
+    <div class="col-md-3 p-0">
+      <figure class="m-0"  [ngClass]="{'background':img==null||img==undefined}">
+        <img *ngIf="img!=null||img!=undefined||img==''" src="{{img}}" alt="img">
+      </figure>
+      <label class="add-foto" for="file">Додати фото</label>
+    </div>
+    <div class="col-md-9 p-0 pl-3">
+      <input class="d-none" type="number" [(ngModel)]="id" formControlName="id">
+      <input type="text" placeholder="Заголовок" [(ngModel)]="header" formControlName="header">
+      <textarea placeholder="Текст статті" [(ngModel)]="text" formControlName="text"></textarea>
+    </div>
+    <input (change)="readUrl($event)" class="d-none" id="file" type="file" name="image" accept="image/*">
+    <button [disabled]="!articleForm.valid" class="add mt-3" type="submit"> Додати</button>
+  </form>
+</div>

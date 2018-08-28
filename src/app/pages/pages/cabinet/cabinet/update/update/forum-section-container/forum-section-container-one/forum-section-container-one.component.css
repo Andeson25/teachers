@@ -1,0 +1,43 @@
+button{
+  background-color: #00a3c6;
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+button:hover{
+  background-color: #0184a0;
+}
+input{
+  font-size: 18px;
+  line-height: 24px;
+  font-family: OpenSans;
+}
+h2{
+  font-size: 18px;
+  line-height: 24px;
+  font-family: OpenSans;
+  margin: 0;
+  color: black;
+}
+.cont{
+  margin: 10px 0;
+  border: 1px solid #c0bfbf;
+  cursor: pointer;
+  background-color: #00a3c6;
+  padding: 10px 5px;
+}
+p{
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: OpenSans;
+  margin: 0;
+}
+h1{
+  font-family: OpenSans;
+  font-size: 24px;
+  line-height: 24px;
+}

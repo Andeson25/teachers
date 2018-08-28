@@ -1,0 +1,101 @@
+*{
+  outline: none;
+}
+h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-family: OpenSans;
+}
+.main{
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+p{
+  margin: 5px 0;
+}
+input {
+  margin-bottom: 10px;
+  width: 50%;
+  font-family: OpenSans;
+  padding-left: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf!important;
+  height: 40px;
+}
+.law-cont{
+  margin: 5px 0;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #00a3c6;
+}
+.law-cont p{
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: white;
+}
+textarea {
+  box-sizing: border-box;
+  min-height: calc( 100% - 40px);
+  border: 1px solid #dfdfdf!important;
+  width: 100%;
+  padding: 10px 10px;
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 24px;
+  resize: none;
+}
+select{
+  background-color: transparent;
+  -webkit-border-radius: 0px!important;
+  height: 40px;
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 24px;
+  width: 100%;
+  display: block;
+}
+label, button, input[type='submit'] {
+  padding: 5px 10px;
+  margin-bottom: 0;
+  background-color: #00a3c6;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+  border: 0;
+}
+
+label:hover, button:hover, input[type='submit']:hover {
+  background-color: #0184a0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+button[type='submit']{
+  margin: 0 auto;
+}
+.add-foto{
+  text-align: center;
+  width: 100%;
+}
+figure {
+  background-color: #c0bfbf;
+  width: 100%;
+  min-height: 100px;
+  overflow: hidden;
+}
+.background{
+  background-color: #c0bfbf;
+}
+input[type='submit']{
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  padding: 5px 10px;
+}

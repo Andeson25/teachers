@@ -1,0 +1,37 @@
+*{
+  outline: none;
+}
+.container-fluid{
+  min-height: 50px;
+  border-bottom: 2px solid #c0bfbf;
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+.container-fluid:hover{
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+span{
+  min-height:40px;
+  width: 40px;
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+}
+h3{
+  font-size: 12px;
+  line-height: 18px;
+  font-family: OpenSans;
+  color: #a3a3a3;
+}
+h2{
+  font-size: 16px;
+  font-family: OpenSans;
+  margin-bottom: 0;
+}
+@media (max-width: 767.98px) {
+  .container-fluid{
+    height: auto;
+  }
+
+}

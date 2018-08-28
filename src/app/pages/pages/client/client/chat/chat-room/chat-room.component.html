@@ -1,0 +1,118 @@
+<div class="container-fluid  d-flex flex-column justify-content-between  w-100">
+  <div *ngIf="param" class="heading d-flex justify-content-start ">
+    <span class="rounded-circle align-self-center " [style.backgroundImage]="'url('+ (otherUser.image|ImgPipe) +')'"></span>
+    <a routerLink="/user-profile/+{{otherUser.id}}" href="" class="align-self-center">{{otherUser.name+' '+otherUser.lastname}}</a>
+  </div>
+  <div class="text " #scrollMe  [scrollTop]="scrollMe.scrollHeight">
+
+    <h2 *ngIf="messages.length==50"  class="text-center load-more w-100 mb-4 d-block" (click)="loadMoreMessages()">Показати давніші</h2>
+    <div class="msg clearfix w-100" *ngFor="let message of messages" [ngClass]="{'other-msg':check(message)}">
+      <div class="cont clearfix">
+        <div class="rounded-circle img  d-inline-block " [style.backgroundImage]="'url('+ (message.from.image|ImgPipe) +')'"></div>
+        <div class="main d-inline-block clearfix">
+          <div class="msg-content clearfix">
+            <span class="file-wrapper-message">
+              <pre class="d-inline-block">{{message.text}}</pre>
+              <span class="d-flex mt-2" *ngFor="let file of message.files">
+                <img style="height: 20px; width: auto; margin-right: 5px;"
+                                                            src="../../../../../../../assets/svg/folderMessage.svg" alt="file">
+                <a target="_blank" class="d-flex align-items-center" href="{{file.path|ImgPipe}}">{{file.name}}</a>
+              </span>
+            </span>
+            <h3 class=" time d-inline-block">{{(message.datetime|date).substring((message.datetime|date).length-5)}}</h3>
+          </div>
+          <h3 *ngIf="message.from.id==user.id&&message.hasBeenRead==true" class="seen">Переглянуто</h3>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--<div class="row m-0 p-0 ">-->
+    <!--<div class="user-msg p-0 msg  d-flex col-8  offset-4  ">-->
+    <!--<div class="cont  d-flex flex-column">-->
+    <!--<div class="message-cont d-flex">-->
+    <!--<p class="message-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis cumque-->
+    <!--delectus dolorum ea eos error magnam maxime, minus, nobis odit placeat possimus quae quaerat quas quisquam-->
+    <!--saepe similique veritatis!</p>-->
+    <!--<h3 class="time d-flex align-items-end">12:36</h3>-->
+    <!--</div>-->
+    <!--<h3 class="seen align-self-end ">Переглянуто</h3>-->
+    <!--</div>-->
+    <!--<div class=" img align-self-start " [style.backgroundImage]="'url('+ (image) +')'"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class="row m-0 p-0 ">-->
+    <!--<div class="other-msg msg d-flex  p-0 col-8   ">-->
+    <!--<div class=" img align-self-start " [style.backgroundImage]="'url('+ (image) +')'"></div>-->
+    <!--<div class="cont  d-flex flex-column">-->
+    <!--<div class="message-cont d-flex">-->
+    <!--<p class="message-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis cumque-->
+    <!--delectus dolorum ea eos error magnam maxime, minus, nobis odit placeat possimus quae quaerat quas quisquam-->
+    <!--saepe similique veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at blanditiis-->
+    <!--commodi debitis deleniti ea error explicabo facilis libero molestiae, nam officia perspiciatis quae, quasi-->
+    <!--suscipit tempore totam velit veritatis.</p>-->
+    <!--<h3 class="time d-flex  align-items-end">12:36</h3>-->
+    <!--</div>-->
+    <!--<h3 class="seen align-self-start ">Переглянуто</h3>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row m-0 p-0 ">-->
+    <!--<div class="other-msg msg d-flex  p-0 col-8   ">-->
+    <!--<div class=" img align-self-start " [style.backgroundImage]="'url('+ (image) +')'"></div>-->
+    <!--<div class="cont  d-flex flex-column">-->
+    <!--<div class="message-cont d-flex">-->
+    <!--<p class="message-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis cumque-->
+    <!--delectus dolorum ea eos error magnam maxime, minus, nobis odit placeat possimus quae quaerat quas quisquam-->
+    <!--saepe similique veritatis!</p>-->
+    <!--<h3 class="time d-flex  align-items-end">12:36</h3>-->
+    <!--</div>-->
+    <!--<h3 class="seen align-self-start ">Переглянуто</h3>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+  </div>
+  <div class="write d-flex" [ngClass]="{'blur':!param}" style="position: relative">
+    <div class="files-wrap d-flex  p-0 "><span class="mb-1 pl-2 " *ngFor="let file of files; let i = index"><img
+      style="height: 20px; width: auto; margin-right: 10px;" src="../../../../../../../assets/svg/folder.svg"
+      alt="file">Файл<span
+      style="vertical-align: middle; text-align: center; font-size: 20px; margin-bottom: 2px; margin-left: 5px; cursor: pointer;"
+      (click)="delete(file,i)">&times;</span></span>
+    </div>
+    <div class="text-wrap d-flex flex-column" style="position: relative">
+      <!--<textarea (keyup.enter)="send(text)" #text name="" id="" placeholder="Ваше повідомлення..."></textarea>-->
+      <span *ngIf="text==''" class="placeholderCustom " style="font-family: OpenSans; position: absolute; top: 10px; left: 10px; z-index: 0; color:#666; font-size: 18px; line-height: 24px; ">Ваше повідомлення...</span>
+      <emoji-input
+        (keyup.enter)="send(text)"
+        [(model)]="text"
+        [textArea]="{}"
+        style="display: inline-block; "
+        (focus)="openPopup(false)"
+        [popupAnchor]="'bottom'"
+        [autofocus]
+        [closeAfterSelection]="false"
+        (setPopupAction)="setPopupAction($event)">
+      </emoji-input>
+
+    </div>
+    <div class="buttons d-flex justify-content-between">
+      <div style="padding-top: 10px"  class="cont-for-buttons d-flex justify-content-around">
+        <form #form>
+          <label for="file" class="file"><img src="../../../../../../../assets/svg/paper-clip.svg" alt=""></label>
+          <input (change)="loadFile(form,file)" name="multipartFile" type="file" class="d-none" id="file" #file>
+          <i #load style="display: none;" class="fa  fa-spinner fa-spin"></i>
+        </form>
+        <span (click)="openPopup()" class="emoji"><img src="../../../../../../../assets/svg/happiness.svg" alt=""></span>
+      </div>
+      <div class="cont-for-send  d-md-none  ">
+      <img src="../../../../../../../assets/svg/send%20(1).svg" (click)="send(text)" style="height: 25px; width: auto" class="sendImg" alt="Надіслати">
+      </div>
+      <h2 class="send" (click)="send(text)">Надіслати</h2>
+    </div>
+  </div>
+</div>

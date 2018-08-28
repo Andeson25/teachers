@@ -1,0 +1,67 @@
+
+textarea{
+  width: 500px;
+  height: 200px;
+  resize: none;
+  margin-bottom: 10px;
+  font-family: OpenSans;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+
+button{
+  background-color: #00a3c6;
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+button:hover{
+  background-color: #0184a0;
+}
+input{
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: OpenSans;
+}
+h2{
+  font-family: OpenSans;
+  line-height: 24px;
+  font-size: 18px;
+}
+h1{
+  font-family: OpenSans;
+  font-size: 24px;
+  line-height: 24px;
+}
+form{
+  margin: 10px;
+}
+select{
+  font-size: 18px;
+  line-height: 24px;
+  font-family: OpenSans;
+  width: 300px;
+  margin-bottom: 10px;
+}
+cont{
+  height: 50px;
+  background-color: #00a3c6;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+}
+.cont h1{
+  background-color: #00a3c6;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: OpenSans;
+  font-size: 24px;
+  line-height: 24px;
+}

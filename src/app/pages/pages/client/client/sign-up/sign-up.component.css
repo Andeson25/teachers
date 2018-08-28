@@ -1,0 +1,195 @@
+.container-fluid {
+  min-height: 63vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+
+}
+
+.sing-up {
+  padding-top: 25px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #d7d7d7;
+  height: auto;
+  padding-bottom: 95px;
+}
+
+.heading {
+  padding-left: 60px;
+  padding-right: 50px;
+  width: 100%;
+}
+.form-nopdd{
+  padding: 0!important;
+}
+#email{
+  text-transform: lowercase;
+}
+.emailValid{
+  display: none;
+}
+.placeOfWork{
+  padding: 1vh 1vw!important;
+}
+#email.ng-invalid.ng-touched.ng-dirty ~ .emailValid{
+  display: block;
+}
+.heading h2 {
+  font-size: 2vw;
+  font-family: OpenSansBold;
+}
+
+.heading h2 {
+  margin-bottom: 45px;
+  padding-left: 12px;
+  border-left: 10px solid #00a3c6;
+}
+
+.add-image {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+form {
+  padding: 0 50px 0 60px!important;
+}
+
+input[type="text"], input[type="tel"], input[type='email'], input[type='password'], select {
+  border-radius: 0!important;
+  margin-bottom: 30px;
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 1vh 1vw!important;
+  background: #f2f2f2;
+  border: 1px solid #b7b7b7;
+  box-sizing: border-box;
+  height: 35px;
+  width: 100%;
+
+}
+
+.inputs {
+  padding-left: 30px;
+  padding-right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+h3 {
+  width: 65%;
+  display: inline-block;
+  margin: 0;
+  color: black;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: OpenSans;
+}
+
+h4 {
+  line-height: 24px;
+  width: 35%;
+  text-align: end;
+  font-size: 14px;
+  color: red;
+  font-family: OpenSans;
+  margin: 0;
+  display: inline-block;
+}
+
+.choose-image {
+  margin-bottom: 30px;
+  line-height: 24px;
+  width: 100%;
+  height: 180px;
+  background: #d7d7d7;
+}
+
+.choose-image h2 {
+  margin: 0;
+  font-family: OpenSansBold;
+  color: #767779;
+  font-size: 18px;
+}
+
+label, button {
+  height: auto;
+  width: 100%;
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #00a3c6;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label:hover, button:hover {
+
+  background-color: #0184a0;
+}
+input:not([type="file"]).ng-invalid.ng-touched {
+  border-color: red;
+}
+img{
+  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
+}
+.add{
+  position: relative;
+}
+p{
+  line-height: normal;
+  margin-bottom: 0;
+  font-size: 10px;
+  font-family: OpenSans;
+}
+.add h3{
+  margin: 5px 0;
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 30px;
+}
+.deleteImg{
+  cursor: pointer;
+  margin: 0 5px 0 0;
+}
+.add > img{
+  cursor: pointer;
+  top: 7.5px;
+  right: -25px;
+  height: 20px;
+  width: auto;
+  position: absolute;
+}
+@media (max-width:  1200px){
+  .inputs{
+    padding-left: 0!important;
+  }
+}
+@media (max-width: 767.98px) {
+  .sing-up{
+    width: 92%;
+    margin: 0 auto;
+  }
+  h4{
+    display: none;
+  }
+  .heading h2{
+    font-size: 15px!important;
+  }
+  form, .heading{
+    padding: 0 10px!important;
+  }
+  .inputs{
+    padding-left: 0!important;
+  }
+}

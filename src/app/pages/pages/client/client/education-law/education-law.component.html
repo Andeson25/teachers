@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class=" heading row align-items-start flex-column d-flex justify-content-center">
+    <h6>Законодавство</h6>
+    <h2>У галузі науки та освіти</h2>
+  </div>
+  <div class="main row m-0 ">
+    <div class="content col-md-9">
+      <div *ngIf="lawContainers.length!=0">
+        <div *ngFor="let one of lawContainers" class="lawes position-relative">
+          <h2 >{{one.name}}</h2>
+          <img  *ngIf="user.role=='MODERATOR'" class="position-absolute  delete" style="height: 25px; width: 25px; display: inline-block; top: 2px; right: 10px; cursor: pointer; z-index: 5" (click)="deleteContainer(one)" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+          <ul>
+            <li *ngFor="let two of one.laws" class="d-flex ">
+              <a href="{{two.path}}">{{two.name}}</a>
+              <img *ngIf="user.role=='MODERATOR'" class=" delete" style="height: 25px; width: 25px; margin-left: 20px; cursor: pointer; z-index: 5" (click)="deleteLaw(one,two)" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div *ngIf="lawContainers.length==0">
+        <h2>Немає законів</h2>
+      </div>
+    </div>
+    <app-advertisment class="col-md-3 pr-0"></app-advertisment>
+  </div>
+</div>

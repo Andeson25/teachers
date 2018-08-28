@@ -1,0 +1,114 @@
+.sign-in {
+  padding: 45px 0;
+  width: 65%;
+  margin: 0 auto;
+  height: auto;
+  border: 1px solid #c0bfbf;
+  background-color: #ffffff;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 30px 125px;
+}
+
+.sign-in h2:first-child {
+  margin-bottom: 40px;
+  font-family: OpenSansBold;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+label {
+  width: 100%;
+  font-size: 14px;
+  font-family: OpenSansBold;
+  line-height: 24px;
+}
+
+form {
+  width: 300px;
+}
+h3{
+  font-family: OpenSans;
+  font-size: 14px;
+  line-height: 24px;
+}
+h4 {
+  margin-bottom: 30px;
+  font-size: 12px;
+  font-family: OpenSansLight;
+  line-height: 14px;
+}
+
+input {
+  border-radius: 3px;
+  border: 1px solid #c0bfbf;
+  background-color: #f2f2f2;
+  font-family: OpenSans;
+  padding-left: 15px;
+  height: 35px;
+  width: 100%;
+}
+
+.forgot {
+  font-size: 13px;
+  line-height: 15px;
+  font-family: OpenSansLight;
+}
+
+.forgot input {
+  margin-top: 1px;
+  margin-right: 12px;
+  height: auto;
+  width: auto;
+}
+
+.forgot div:first-child {
+  width: auto;
+}
+
+.forgot a {
+  color: #00a3c6;
+  font-family: OpenSansLight;
+  width: auto;
+}
+
+.forgot a:hover {
+  color: #0184a0;
+  outline-color: #0184a0;
+}
+h3 a {
+  color: #00a3c6;
+  font-family: OpenSansLight;
+  margin-left: 5px;
+}
+h3 a:hover{
+  color: #0184a0;
+  outline-color: #0184a0;
+}
+button {
+  border-radius: 3px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 30px;
+  background-color: #00a3c6;
+  border: none;
+  width: 100%;
+  height: 35px;
+  font-family: OpenSansBold;
+}
+
+button:hover {
+  background-color: #0184a0;
+}
+@media (max-width: 768px){
+  .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sign-in{
+    width: 100%;
+  }
+}

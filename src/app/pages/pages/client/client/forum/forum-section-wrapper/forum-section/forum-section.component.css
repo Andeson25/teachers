@@ -1,0 +1,139 @@
+.heading {
+  border-left: 10px solid #00a3c6;
+  height: 40px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.heading h2 {
+  font-size: 24px;
+  margin-left: 12px;
+  font-family: OpenSansBold;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+
+.container-fluid {
+  padding: 0 0 45px 0;
+  width: 92%;
+  margin: 0 auto;
+  min-height: 63vh;
+  padding-top: 30px;
+}
+
+a {
+  color: #00a3c6;
+  text-underline: #0184a0;
+  font-family: OpenSansBold;
+}
+
+a:hover {
+  color: #0184a0;
+}
+
+img {
+  margin: auto 15px auto 0;
+  height: 40px;
+  width: auto;
+}
+
+table * {
+  box-sizing: border-box;
+}
+
+table {
+  margin-bottom: 45px;
+  border-color: #b7b7b7;
+  padding: 0;
+}
+
+.thead-first {
+
+  font-size: 18px;
+  font-family: OpenSans;
+  font-size: 15px;
+  line-height: 24px;
+  background: #555555;
+  color: white;
+}
+
+.thead-first td:first-child {
+  padding-left: 15px !important;
+  font-family: OpenSansBold;
+}
+
+.forumStyle {
+  width: 100%;
+  overflow-x: auto;
+}
+
+tbody {
+  background: white;
+  font-family: OpenSans;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+tbody td {
+  height: 80px;
+  line-height: normal;
+  margin: auto 0;
+}
+
+tbody td:first-child {
+  font-family: OpenSansBold;
+  padding: 20px 15px;
+  width: 50%;
+}
+
+tbody td:not(:first-child) {
+  font-size: 16px;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+tbody td:nth-child(2){
+  text-align: center;
+  width: 10%;
+}
+tbody td:nth-child(3){
+  text-align: center;
+  width: 15%;
+}
+tbody td:last-child{
+  padding: 0!important;
+  width: 25%;
+}
+
+tbody td:last-child p {
+  text-align: start;
+  margin: 0 0 0 8%;
+}
+
+nav {
+
+  width: 100%;
+  padding: 0 20%;
+  margin-bottom: 5vh;
+}
+
+
+nav li {
+  margin: 0 .2vw;
+  border-radius: 0;
+}
+.pagination a{
+  color: #00a3c6;
+}
+
+.page-item:hover .page-link{
+  background-color: #00a3c6;
+  color: white!important;
+}
+nav li :first-child {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}

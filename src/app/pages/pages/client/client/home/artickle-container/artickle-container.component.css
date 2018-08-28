@@ -1,0 +1,102 @@
+.heading {
+  border-left: 10px solid #00a3c6;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 30px 0 0 0 !important;
+  height: 40px !important;
+}
+
+.heading h6 {
+  text-transform: uppercase;
+  margin: 0 0 0 12px;
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.heading h2 {
+  text-transform: uppercase;
+  margin: 0 0 0 12px;
+  line-height: 24px;
+  font-family: OpenSansBold;
+  font-size: 24px;
+}
+
+.popular {
+  min-height: 50vh;
+  width: 100%;
+
+  margin-top: 3vh;
+  clear: both;
+  margin-bottom: 5vh;
+
+}
+
+.popular app-popular-article {
+  vertical-align: top;
+  display: inline-block;
+  padding: 0;
+  float: left;
+  height: 25vh;
+  width: 25%;
+  font-size: 1rem;
+
+}
+
+.popular app-popular-article:nth-child(1) {
+  font-size: 2rem;
+  width: 50%;
+  height: 50vh;
+}
+
+.borderClass {
+  border-left: 10px solid #00a3c6;
+}
+
+.content {
+  margin: 0;
+  font-size: 0;
+  clear: both;
+  margin-bottom: 0 !important;
+}
+
+.artick-cont {
+  height: auto;
+}
+
+hr {
+  margin: 0;
+  margin-bottom: 5vh;
+  border-color: #CBCBCB;
+  border-width: .3vh;
+}
+
+nav {
+
+  width: 100%;
+  padding: 0 20%;
+  margin-bottom: 5vh;
+}
+
+nav a {
+  color: #00a3c6;
+  font-size: 1rem;
+}
+
+nav li :hover {
+  background: #00a3c6;
+  color: white;
+}
+
+nav li {
+  margin: 0 .2vw;
+  border-radius: 0;
+}
+
+nav li :first-child {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}

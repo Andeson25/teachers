@@ -1,0 +1,20 @@
+<hr>
+<div class="container d-flex leftMarg">
+  <div class="row d-flex myClass position-relative">
+    <img *ngIf="user.role=='MODERATOR'" class="position-absolute delete" style="height: 25px; width: 25px;" (click)="delete()" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+    <figure style="overflow: hidden" class="col-md-4">
+    <img src="{{article.image|ImgPipe}}" class=" ">
+    </figure>
+    <div class="text d-flex flex-column col-md-8">
+      <a href="#" [routerLink]="['/article', 'one', article.id]">{{article.header}}</a>
+      <div class="metadata d-flex align-items-center"><img src="../../../../../../../../assets/svg/time.svg" alt="time">
+        <h5>{{article.datetime|date}}</h5>
+        <img src="../../../../../../../../assets/svg/comment-black-rectangular-speech-bubble-interface-symbol.svg"
+             alt="time">
+        <h5>{{(article.comments|nou).length}}</h5>
+        <!--<h5 *ngIf="article.comments == null">0</h5>-->
+      </div>
+      <p>{{article.text|nou}} </p>
+    </div>
+  </div>
+</div>

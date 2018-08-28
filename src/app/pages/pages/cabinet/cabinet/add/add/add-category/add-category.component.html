@@ -1,0 +1,9 @@
+<div class="container  pb-5 d-flex justify-content-start align-items-center flex-column">
+  <h2>
+   Додавання категорії
+  </h2>
+  <form class="container d-flex justify-content-start align-items-center flex-column" [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+    <input type="text" placeholder="Назва" formControlName="name">
+    <input type="submit" value="Додати">
+  </form>
+</div>

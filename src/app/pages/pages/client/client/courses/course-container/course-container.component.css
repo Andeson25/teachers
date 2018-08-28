@@ -1,0 +1,286 @@
+.container-fluid {
+  min-height: 100vh;
+  margin: auto;
+  padding: 30px 0 50px 0 !important;
+  width: 92%;
+  background: #f0f0f0;
+}
+
+.heading {
+  height: 40px !important;
+  margin-bottom: 30px;
+  padding: 0;
+  border-left: 10px solid #00a3c6;
+}
+
+.yellow  polygon{
+  fill: #ffcf00!important;
+}
+
+.heading h2 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: OpenSansBold;
+  margin: 0 0 0 12px;
+  line-height: 24px;
+}
+
+.top-card:not(:first-child) {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.stars h2 {
+  margin-bottom: 0;
+  font-size: 20px !important;
+  line-height: 24px;
+  font-family: OpenSansBold;
+}
+
+.top-card {
+  width: auto;
+  height: 260px !important;
+}
+
+.top-course a {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: OpenSansBold;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  outline-color: #ffffff;
+}
+
+.top-course:hover a {
+  color: #ffffff;
+  outline-color: #ffffff;
+}
+
+.top-course {
+
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 75%;
+}
+
+.courses {
+  position: relative;
+}
+
+.courses span {
+  z-index: 0;
+  position: absolute;
+  width: calc(100% - 20px);
+  height: 75%;
+  right: 0;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.courses:hover span {
+  cursor: pointer;
+  background-color: #0184a0;
+  opacity: .7;
+}
+
+.all-stars {
+  padding: 0;
+}
+
+.stars {
+  width: 100%;
+  height: 25%;
+}
+
+.hovering-stars {
+  height: 25%;
+  width: 100%;
+}
+
+svg {
+  height: 70%;
+  width: 15%;
+}
+
+.hovering-stars svg polygon {
+  fill: #ffda44 !important;
+}
+
+.filter {
+  margin-bottom: 30px;
+  min-height: 80px;
+  padding-right: 15px;
+}
+
+.stars svg polygon {
+  fill: grey !important;
+}
+
+h3 {
+  line-height: 24px;
+  font-size: 18px;
+  font-family: OpenSans;
+}
+
+hr {
+  margin: 15px 0 0 0;
+  border-color: #CBCBCB;
+  border-width: .3vh;
+}
+
+input {
+  outline: none;
+  padding-left: 15px;
+  font-family: OpenSans;
+  font-size: 16px;
+  height: 34px;
+  width: 240px;
+}
+
+.category-filter {
+}
+
+.filter-category > h2 {
+  height: 34px;
+  border: 1px solid #c0bfbf;
+  box-sizing: border-box;
+  padding-left: 12px;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: OpenSans;
+  line-height: 30px;
+  position: relative;
+}
+
+.filter-category > img {
+  transform: none;
+  transition: .2s all linear;
+  height: 10px;
+  width: auto;
+  position: absolute;
+  top: 12px;
+  right: 3px;
+}
+
+.filter-category {
+  outline: none;
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+  user-select: none !important;
+  cursor: pointer;
+  width: 200px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.category h2 {
+  margin-bottom: 0;
+  padding-left: 12px;
+  font-size: 16px;
+  font-family: OpenSans;
+  line-height: 36px;
+}
+
+.category h2:hover {
+  background-color: #00a3c6;
+  color: white;
+}
+
+.category {
+  display: none;
+  z-index: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border: 1px solid #c0bfbf;
+  width: 200px;
+  top: 33px;
+  background: #ffffff;
+  position: absolute;
+  height: 150px;
+}
+
+app-course-card:not(:first-child) {
+  padding-right: 15px;
+}
+
+.question {
+  margin-top: 110px;
+  height: 250px;
+}
+
+.question h3 {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: OpenSansBold;
+}
+
+form input {
+  margin-right: 10px;
+  width: auto;
+  height: auto;
+}
+
+form button {
+  margin-top: 20px;
+  color: #ffffff;
+  width: 100%;
+  font-family: OpenSansBold;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: #00a3c6;
+  height: 50px;
+}
+form button:hover{
+  cursor: pointer;
+  background-color: #0184a0;
+}
+nav {
+
+  width: 100%;
+  padding: 0 20%;
+  margin-bottom: 5vh;
+}
+
+nav a {
+  color: #00a3c6;
+  font-size: 1rem;
+}
+
+nav li :hover {
+  background: #00a3c6;
+  color: white;
+}
+
+nav li {
+  margin: 0 .2vw;
+  border-radius: 0;
+}
+
+nav li :first-child {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+@media (max-width: 767.98px) {
+ app-course-card{
+   padding: 0!important;
+ }
+  .question{
+    margin-top: 50px!important;
+  }
+  .col-md-3{
+    padding: 0;
+  }
+  .col-md-9{
+    padding: 0!important;
+  }
+
+}

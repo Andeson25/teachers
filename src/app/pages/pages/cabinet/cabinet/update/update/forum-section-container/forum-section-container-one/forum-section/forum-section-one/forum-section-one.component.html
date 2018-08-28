@@ -1,0 +1,17 @@
+<div *ngIf="bool" class="d-flex flex-column">
+  <button class="align-self-start" [routerLink]="['/cabinet/update/forum',section.container.id]">Назад</button>
+  <form class="w-100 align-self-center d-flex flex-column justify-content-start align-items-center"  [formGroup]="sectionForm" (submit)="updateSection()">
+    <h1>Оновити підрозділ</h1>
+    <input type="text" class="text-center" formControlName="header">
+    <textarea formControlName="description"></textarea>
+    <form formGroupName="container">
+    <select #catSel formControlName="id">
+      <option *ngFor="let one of containers;" [value]="one.id">{{one.header}}</option>
+    </select>
+    </form>
+    <button type="submit">Оновити</button>
+  </form>
+
+  <app-update-forum-topic *ngFor="let one of topic" [topic]="one" [section]="section"></app-update-forum-topic>
+
+</div>

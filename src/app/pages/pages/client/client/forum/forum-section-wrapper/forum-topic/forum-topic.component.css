@@ -1,0 +1,253 @@
+.heading {
+  border-left: 10px solid #00a3c6;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.heading h2 {
+  font-size: 24px;
+  margin-left: 12px;
+  font-family: OpenSansBold;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+pre{
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  overflow: visible;
+  width: 100%;
+}
+.container-fluid {
+  padding: 0 0 0 0;
+  width: 100%;
+  min-height: 63vh;
+  padding-top: 30px;
+}
+
+table {
+  margin-bottom: 30px;
+  overflow-x: auto;
+  border-color: #b7b7b7;
+  width: 100%;
+}
+
+thead {
+  font-size: 16px;
+  font-family: OpenSans;
+  line-height: 24px;
+  color: white;
+  background: #555555;
+}
+.info-teacher{
+  text-align: start!important;
+}
+h3{
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: OpenSans;
+}
+thead tr th {
+  height: 30px;
+}
+
+thead th:first-child {
+  text-align: center;
+
+  width: 20%;
+}
+
+thead th:nth-child(2) {
+  padding-left: 20px;
+}
+
+tbody td {
+  padding: 0 0 0 0;
+  background: white;
+  font-family: OpenSans;
+  height: 220px;
+}
+
+tbody td:first-child {
+  padding: 20px 0 0 0;
+}
+
+.author-name h2 {
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #00a3c6;
+}
+
+.author-name h2:hover {
+  color: #0184a0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline: #0184a0;
+}
+
+.author-name img {
+
+  margin-bottom: 20px;
+  height: 70px;
+  width: auto;
+}
+
+.author-name p {
+
+  margin-bottom: 2px;
+}
+
+.author-content .author-heading {
+  background-color: #ffffff;
+  height: 50px;
+  border-bottom: 1px solid #dee2e6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.author-heading img {
+  margin-left: 16px;
+  height: 50%;
+  width: auto;
+}
+
+.author-heading h2 {
+  font-family: OpenSansBold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #00a3c6;
+
+  margin: 0 0 0 16px;
+}
+
+.author-topic-content {
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: OpenSans;
+  padding-left: 16px;
+  padding-top: 20px;
+}
+
+nav {
+  padding: 0 !important;
+  width: 100%;
+  padding: 0 20%;
+  margin-bottom: 5vh;
+}
+
+nav ul {
+  width: auto !important;
+  margin-bottom: 70px ;
+}
+nav ul.first-ul{
+  margin-bottom: 70px !important;
+}
+
+nav a {
+  color: #0184a0;
+  font-size: 1rem;
+}
+
+nav li :hover {
+  background: #0184a0;
+  color: white;
+}
+
+nav li {
+  margin: 0 .2vw;
+  border-radius: 0;
+}
+
+nav li :first-child {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+.write-message {
+  min-height: 300px;
+  background-color: #f0f0f0;
+  border: 1px solid #dee2e6;
+  box-sizing: border-box;
+
+}
+
+.write-message thead th {
+  text-align: center;
+}
+tbody tr td:nth-child(2){
+  background-color: #f0f0f0;
+}
+.write-message tbody tr td:first-child {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 65px 0 0 0;
+  font-family: OpenSans;
+  font-size: 14px;
+  line-height: 18px;
+  box-sizing: border-box;
+  border-right: 1px solid #dee2e6;
+}
+
+.write-message textarea {
+  outline:none;
+  font-family: OpenSans;
+  height: 160px;
+  padding: 5px 0 0 5px;
+  background: white;
+  resize: none;
+  width: 92%;
+  margin: 20px auto 26px ;
+}
+.write-message button{
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  font-family: OpenSans;
+  width: auto;
+  background: #00a3c6;
+  border: none;
+  padding: 5px 25px;
+}
+.write-message button:hover{
+  cursor: pointer;
+  background: #0184a0;
+}
+.btn-wrap{
+  width: 92%;
+  margin: 0 auto;
+}
+nav {
+
+  width: 100%;
+  padding: 0 20%;
+  margin-bottom: 5vh;
+}
+
+
+nav li {
+  margin: 0 .2vw;
+  border-radius: 0;
+}
+.pagination a{
+  color: #00a3c6;
+}
+
+.page-item:hover .page-link{
+  background-color: #00a3c6;
+  color: white!important;
+}
+nav li :first-child {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}

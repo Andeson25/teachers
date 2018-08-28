@@ -1,0 +1,7 @@
+<div style="padding-top: 20px;">
+  <div class="cont d-flex flex-column justify-content-center align-items-center"  *ngFor="let one of sectionContainerList" [routerLink]="[one.id]">
+    <p>{{one.header|nou}}</p>
+    <p>Кількість підрозділів: {{one.sections.length}}</p>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,267 @@
+<div class="container-fluid">
+  <div class=" heading  d-flex align-items-center ">
+    <h2>УСІ КУРСИ</h2>
+  </div>
+  <div class=" d-flex flex-md-row flex-column p-0 w-100">
+    <div class="top-card all-stars align-items-md-start align-items-center  col-md-3 d-flex flex-column ">
+      <h2>ТОП курсів з найвищим рейтингом</h2>
+      <div class="hovering-stars  d-flex mt-2">
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+        <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867;" xml:space="preserve">
+<polygon fill="grey" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798
+	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+      </div>
+    </div>
+    <app-course-card (deleteCourse)="delete($event)" style="outline: none"  class="top-card courses col-md-3" *ngFor="let course of topThree; let i = index" [course]="course" [ngClass]="{'d-none': i>2}"></app-course-card>
+  </div>
+  <hr>
+  <div class="d-flex row m-0 " id="scroll">
+    <div class=" col-md-9 pl-0">
+      <div class="filter row justify-content-between">
+        <div class="col-md-6 name-filter align-items-center align-items-md-start d-flex flex-column mt-2 mb-2">
+          <h3>Пошук курсів</h3>
+          <input type="text" placeholder="Введіть назву предмета" list="list" #categoryInput
+                 (change)="filter(categoryInput.value,filterCategoryHeader)">
+          <datalist id="list">
+            <option *ngFor="let category of categories" value="{{category.name}}">
+          </datalist>
+        </div>
+        <div class=" col-md-6  category-filter d-flex flex-column mt-2 mb-2 justify-content-start align-items-center align-items-md-end">
+          <h3>Сортувати</h3>
+          <div class="filter-category" tabindex="1" (blur)="hide(category)">
+            <h2 (click)="show(category)" #filterCategoryHeader>По типах</h2>
+            <img
+              src="../../../../../../assets/svg/drop-down-arrow.svg"
+              #arrowImg
+              alt="">
+            <div class="category" #category>
+              <h2 class="" (click)="clickFilter(categoryInput.value,filterCategoryHeader,'По типах')">Без фільтрації</h2>
+              <h2 *ngFor="let courseType of courseTypes" (click)="clickFilter(categoryInput.value,filterCategoryHeader,courseType)" class="">
+                {{courseType}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="course-list d-flex align-items-start flex-wrap pl-0 pr-0">
+        <div *ngIf="courses.length!=0" class="row m-0">
+        <app-course-card (deleteCourse)="delete($event)" *ngFor="let course of courses" [course]="course"
+                         class="pl-0 col-md-6 col-lg-4" [ngClass]="{'d-none': i<2}"></app-course-card>
+        </div>
+        <div *ngIf="courses.length==0" class="text-center w-100">
+          <h2>Немає курсів</h2>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item"  scrollTo scrollTargetSelector="#scroll" (click)="prePage()" *ngIf="!backBool" >
+              <a class="page-link" href="#" tabindex="-1" >Назад</a>
+            </li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage-2)" *ngIf="!backBool&&!(currentPage<=2)" >{{currentPage-2}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage-1)" *ngIf="!backBool" >{{currentPage-1}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" style="background-color: #00a3c6; color: white;" (click)="loadPage(currentPage)" >{{currentPage}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage+1)" *ngIf="(currentPage+1<=numberOfAllPages)" >{{currentPage+1}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage+2)" *ngIf="(currentPage+2<=numberOfAllPages)" >{{currentPage+2}}</a></li>
+            <li *ngIf="(currentPage!=numberOfAllPages)" class="page-item" scrollTo scrollTargetSelector="#scroll">
+              <a class="page-link" (click)="nextPage()"  >Далі</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div *ngIf="canVote" class="question col-md-3 pr-0 d-flex flex-column justify-content-start">
+      <h2 style="font-family: OpenSans; font-size: 18px; line-height: 30px;">Опитування</h2>
+      <h3>Який курс Вас найбільше цікавить</h3>
+      <form action="#" [formGroup]="questForm" (ngSubmit)="vote()">
+        <label *ngFor="let categoryOne of (questionnaire.courseCategories) " for="{{categoryOne.name}}"
+               class="d-flex justify-content-start align-items-start"
+               style="font-family: OpenSans; font-size: 14px; line-height: 20px;">
+          <input formControlName="answer"  [value]="categoryOne.id" name="answer"   id="{{categoryOne.name}}" type="radio">
+          {{categoryOne.name}}
+        </label>
+        <button [disabled]="questForm.invalid" type="submit">Голосувати</button>
+      </form>
+    </div>
+    <div *ngIf="!canVote" class="question col-md-3 pr-0 d-flex flex-column justify-content-start">
+      <h2 style="font-family: OpenSansBold; font-size: 24px; line-height: 30px;">Результати опитування</h2>
+      <div *ngFor="let courseCategory of (questionnaire.courseCategories)">
+        <div class="d-flex justify-content-between">
+          <h3 style="font-family: OpenSans; font-size: 18px; line-height: 30px;">{{courseCategory.name}}</h3>
+          <h3 style="font-family: OpenSans; font-size: 18px; line-height: 30px;">{{courseCategory.count+'%'}}</h3>
+        </div>
+        <div class="progress w-100" style="height: 10px; background-color: #c0bfbf">
+          <div class="progress-bar h-100 " role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"
+               style="background-color: #00a3c6; transition: 1s all linear" [style.width.%]="courseCategory.count">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="d-flex flex-column align-self-center">
+  <div class="d-flex flex-column align-items-center cont justify-content-center" *ngFor="let one of lawContainerList" [routerLink]="[one.id]">
+    <h2>{{one.name}}</h2>
+    <h2>Кількість законів : {{(one.laws|nou).length}}</h2>
+  </div>
+</div>

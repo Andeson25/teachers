@@ -1,0 +1,276 @@
+.defs-only{
+  display: none;
+}
+.row {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  height: 12vh;
+}
+.row img{
+  height: 100%;
+  width: auto;
+}
+.top img{
+  height: 12vh !important;
+  width: auto!important;
+}
+.user-menu {
+  width:auto !important;
+  padding-right: 2vw!important;
+}
+.user span{
+  height: 30px!important;
+  width: 30px!important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 25%;
+}
+p{
+  font-size: 14px!important;
+  font-family: OpenSans;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0 .5vw 0;
+}
+.messages{
+  position: relative;
+}
+.messages svg{
+  height: 30px!important;
+  width: auto;
+}
+.messages:hover svg g g path{
+  fill: #01829e;
+}
+.rounded-circle{
+  height: 20px;
+  width: 20px;
+}
+.user  img{
+  height: 30px!important;
+  width: 30px!important;
+}
+.singin{
+  height: 24.5px!important;
+  width: auto;
+}
+.user-menu a:hover {
+
+  color: #01829e;
+  text-underline: #01829e;
+}
+.user-menu a:hover svg g g g > path{
+  fill: #01829e;
+}
+.admin{
+  padding-left: 15px;
+  color: #515151;
+}
+.admin:hover{
+  text-underline: none;
+}
+.admin:hover p{
+  text-underline: none;
+  color: #0184a0;
+
+}
+
+.messagesCount{
+  text-align: center;
+  font-size: .7rem;
+  line-height: 1;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  height: 20px!important;
+  background: red;
+  width: 20px!important;
+  margin: 0!important;
+  border-radius: 60%;
+  top: -6px!important;
+  right: -7px!important;
+}
+
+.row .top:first-child{
+  padding: 1vh 0;
+}
+
+
+.user-menu a:not(:hover) p {
+  color: #515151;
+}
+.user-menu a img{
+
+  margin-right: .5vw;
+  height: auto;
+  width: auto;
+}
+.main-nav{
+  min-height: 10vh;
+}
+
+.user-menu a:hover {
+
+}
+h1 {
+  margin: 0;
+  font-size: 2.5vw;
+}
+
+.top {
+  padding: 2vh 0;
+}
+
+nav {
+  background: #00a3c6;
+  min-height: 10vh;
+  padding: 0;
+}
+.navbar-brand {
+
+  padding: 0 0 0 3vw!important;
+  margin: 0;
+  width:auto!important;
+}
+nav > a >h1 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+
+
+button {
+  padding: 5px 5px;
+  height: 50px;
+  width: 50px!important;
+  border: 2px solid white !important;
+  margin: 1vh 2vw;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../../../../../../../assets/svg/menu-button.svg");
+  filter: invert(100%);
+}
+
+div.navbar-nav {
+  width: 100%;
+  padding: 0;
+}
+
+.collapse a {
+  text-decoration: none;
+  height: 12vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.collapse a:hover {
+  background: #0184a0;
+}
+
+.nav-item{
+  text-decoration: none!important;
+  text-align: center!important;
+  text-transform: uppercase!important;
+  font-family: OpenSansBold!important;
+}
+.nav-item h2{
+  margin: 0!important;
+  font-size: 14px;
+  line-height: 18px;
+}
+.main-nav{
+  padding: 0 10vw;
+}
+
+@media (max-width: 776px) {
+  .nav-item h2{
+    width: auto;
+  }
+  .row{
+    display: none!important;
+  }
+
+  nav {
+    padding: 0!important;
+  }
+  .collapsing .nav-item{
+    height: 12vh!important;
+    color: white!important;
+    text-decoration: none!important;
+    text-align: center!important;
+    text-transform: uppercase!important;
+    font-family: OpenSansBold!important;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+  }
+  .user-adaptive{
+    height: 12vh!important;
+    padding: 0 5px!important;
+  }
+  .user-adaptive a{
+    padding: 0!important;
+    margin: 0!important;
+  }
+  .user-adaptive a:hover{
+    background-color: transparent!important;
+  }
+  .user-adaptive a:first-child p{
+    margin: 0!important;
+  }
+  .user-adaptive a p{
+    color: white!important;
+
+  }
+  .user-adaptive a:hover p{
+    color: white!important;
+    border-bottom: 1px solid white!important;
+  }
+  .user-adaptive a svg g g > path{
+    fill: white;
+  }
+  .user-adaptive a svg g g g > path{
+    fill: white!important;
+  }
+  .user-adaptive a span{
+    top: calc(18vh - 23px);
+    right: calc(50% - 25px);
+  }
+  .user-adaptive a p {
+    width: auto;
+  }
+  .user-adaptive{
+    display: flex!important;
+  }
+  .user-adaptive .messages{
+
+  }
+  .messagesCount{
+    top: calc(50% - 20px) !important;
+    right: calc( 50% - 20px) !important;
+  }
+  .user-adaptive a:first-child{
+    justify-content: space-between!important;
+    align-items: center!important;
+  }
+  .user-adaptive a:nth-child(2){
+    justify-content: center!important;
+    align-items: center!important;
+  }
+  .user-adaptive a:last-child{
+    justify-content: center!important;
+    align-items: center!important;
+
+  }
+  .log-out{
+    margin-right: 10px!important;
+  }
+}

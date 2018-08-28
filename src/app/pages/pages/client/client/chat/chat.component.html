@@ -1,0 +1,25 @@
+<div class="container-fluid position-relative d-flex">
+  <div class="chat-containers col-md-4" #containers>
+    <div class="label d-flex w-100 align-items-center">
+      <img src="../../../../../../assets/svg/letter.svg" alt="Мої повідомлення"> <h2 class=" d-flex align-items-center">Мої повідомлення</h2>
+    </div>
+    <div class="label">
+      <button routerLink="/teachers-of-ukraine">Почати розмову</button>
+    </div>
+    <div class="chat-containers-cards w-100" *ngIf="bool&&chatRooms.length!=0">
+      <app-chat-container *ngFor="let room of chatRooms " (click)="getInChat(containers,arrow)" [chatRoom]="room"></app-chat-container>
+    </div>
+    <div *ngIf="chatRooms.length==0" class="chat-containers-cards w-100">
+      <div style="height: 50px;
+  border-bottom: 2px solid #c0bfbf;
+  box-sizing: border-box;
+  padding: 5px 10px;" class="d-flex align-items-center justify-content-center">
+        <h2 style="margin: 0;font-size: 18px; line-height: 24px; font-family: OpenSans;">Немає повідомлень</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 p-0 m-0 chat">
+    <img src="../../../../../../assets/svg/left-arrow.svg" #arrow (click)="showContainers(containers,arrow)" class="arrow" alt="">
+  <router-outlet></router-outlet>
+  </div>
+</div>

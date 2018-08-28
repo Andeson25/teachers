@@ -1,0 +1,66 @@
+.container-fluid {
+  padding: 0 0 200px 0;
+  width: 92%;
+  margin: 0 auto;
+  min-height: 63vh;
+  padding-top: 30px;
+}
+.not-autorized{
+  width: 92%;
+  margin: 25px auto 0;
+  height: 40vh;
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+}
+.not-autorized h2{
+  font-size: 18px;
+  font-family: OpenSansBold;
+  line-height: 30px;
+}
+.not-autorized button{
+  cursor: pointer;
+  height: 35px;
+  width: 140px;
+  text-align: center;
+  background-color: #00a3c6;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 35px;
+  font-family: OpenSansBold;
+
+}
+.heading{
+  border-left: 10px solid #00a3c6;
+  height: 40px;
+  margin-bottom: 30px;
+}
+.heading h2{
+  font-size: 24px;
+  margin-left: 12px;
+  font-family: OpenSansBold;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+button:hover{
+  background-color: #0184a0!important;
+}
+.heading button{
+  cursor: pointer;
+  height: 30px;
+  width: 140px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #00a3c6;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: OpenSansBold;
+}
+
+@media screen and (max-width: 767.98px){
+
+  .container-fluid {
+    padding: 0 0 50px 0;
+  }
+}

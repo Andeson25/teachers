@@ -1,0 +1,29 @@
+<div class=" heading row d-flex justify-content-start flex-column borderClass">
+  <h2>ГОЛОВНІ СТАТТІ</h2>
+  <h6>По обговоренню за місяць</h6>
+</div>
+<div id="scroll" class="row d-md-block ml-auto mr-auto  popular" >
+  <app-popular-article *ngFor="let one of popularArticles" [popularArticle]="one" class="col-12"></app-popular-article>
+</div>
+<div class="row content mt-4 mb-4">
+  <div class=" col-md-9 p-0 artick-cont ">
+    <app-artickle-container-one (deleteArt)="delete($event)" *ngFor="let two of articles" [article]="two"></app-artickle-container-one>
+    <hr>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"  scrollTo scrollTargetSelector="#scroll" (click)="prePage()" *ngIf="!backBool" >
+          <a class="page-link" href="#" tabindex="-1" >Назад</a>
+        </li>
+        <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage-2)" *ngIf="!backBool&&!(currentPage<=2)" >{{currentPage-2}}</a></li>
+        <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage-1)" *ngIf="!backBool" >{{currentPage-1}}</a></li>
+        <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" style="background-color: #00a3c6; color: white;" (click)="loadPage(currentPage)" >{{currentPage}}</a></li>
+        <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage+1)" *ngIf="(currentPage+1<=numberOfAllPages)" >{{currentPage+1}}</a></li>
+        <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage+2)" *ngIf="(currentPage+2<=numberOfAllPages)" >{{currentPage+2}}</a></li>
+        <li *ngIf="(currentPage!=numberOfAllPages)" class="page-item" scrollTo scrollTargetSelector="#scroll">
+          <a class="page-link" (click)="nextPage()"  >Далі</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <app-advertisment class="col-md-3 pr-0" ></app-advertisment>
+</div>

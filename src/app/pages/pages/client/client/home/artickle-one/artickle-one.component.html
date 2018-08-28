@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="heading d-flex flex-column ">
+
+    <h2>{{article.header|nou}}</h2>
+    <div class="metadata d-flex align-items-center"><img src="../../../../../../../assets/svg/time.svg" alt="time">
+      <h5>{{article.datetime|date}}</h5>
+      <img src="../../../../../../../assets/svg/comment-black-rectangular-speech-bubble-interface-symbol.svg"
+           alt="time">
+      <h5>{{(article.comments|nou).length}}</h5>
+    </div>
+  </div>
+  <div class="row  ">
+    <div class="content  col-md-9 position-relative ">
+      <img *ngIf="user.role=='MODERATOR'" (click)="delete()" class="position-absolute delete" style="height: 25px; width: 25px;" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+      <div class="text-content clearfix">
+        <img src="{{article.image|ImgPipe|nou}}" alt=""> <!--todo-->
+        <pre>{{article.text|nou}}</pre>
+      </div>
+      <div [ngClass]="{'d-flex':isAuth==false, 'd-none': isAuth==true}"
+           class="not-autorized  flex-column align-items-center justify-content-center"><h2>Переглядати та
+        залишати коментарі можуть лише зареєстровані користувачі </h2>
+        <button routerLink="/sign-in">Увійти</button>
+      </div>
+      <div [ngClass]="{'d-block':isAuth==true, 'd-none': isAuth==false}" class=" coments">
+        <h2>Коментарі</h2>
+        <hr>
+        <div *ngIf="(article.comments|nou).length!=0" class="position-relative">
+
+          <div class="cont position-relative" *ngFor="let two of article.comments">
+            <img *ngIf="user.role=='MODERATOR'" (click)="deleteComment(two)" class="position-absolute delete" style="height: 25px; width: 25px; top: 0; right: 0;" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+            <div class="metadata d-flex align-items-center text-coment">
+              <a class="d-flex align-items-center"
+                 href="" [routerLink]="[ '/user-profile' , two.from.id|nou ]">
+                <span
+                  class=" align-self-center rounded-circle user-foto"
+                  [style.backgroundImage]="'url('+ (two.from.image|ImgPipe) +')'">
+
+                </span>
+                <p class="mb-0">{{(two.from.name|nou)+" "+(two.from.lastname|nou)}}</p>
+              </a>
+              <img src="../../../../../../../assets/svg/time.svg" class="" alt="time">
+              <h5>{{two.datetime|date|nou}}</h5>
+            </div>
+            <div class="coment">
+              <pre style="margin-left: 47px; font-family: OpenSans; ">{{two.text|nou}}</pre>
+            </div>
+            <hr>
+          </div>
+        </div>
+        <hr>
+        <div *ngIf="(article.comments|nou).length==0">
+          <h2>Немає коментарів</h2>
+        </div>
+        <div class="write-coment d-flex flex-column  ">
+          <div class="d-flex text-area">
+            <a class="d-flex align-items-start" href=""><span
+              class="  rounded-circle user-foto" [style.backgroundImage]="'url('+ (user.image|ImgPipe|nou) +')'"></span></a>
+            <textarea name="" id="" #idSendTextAreaComment></textarea>
+          </div>
+          <button (click)="sendComment(idSendTextAreaComment)">Опублікувати</button>
+        </div>
+
+      </div>
+    </div>
+    <app-advertisment class="col-md-3 pr-0"></app-advertisment>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+*{
+  outline: none;
+}
+h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-family: OpenSans;
+}
+
+input {
+  width: 100%;
+  font-family: OpenSans;
+  padding-left: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf!important;
+  height: 40px;
+}
+
+textarea {
+  box-sizing: border-box;
+  min-height: 250px;
+  border: 1px solid #dfdfdf!important;
+  width: 100%;
+  padding: 10px 10px;
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 24px;
+  resize: none;
+}
+select{
+  background-color: transparent;
+  -webkit-border-radius: 0px!important;
+  height: 40px;
+  font-family: OpenSans;
+  font-size: 18px;
+  line-height: 24px;
+  width: 100%;
+  display: block;
+}
+label, button, input[type='submit'] {
+  margin-top: 40px;
+  padding: 5px 10px;
+  margin-bottom: 0;
+  background-color: #00a3c6;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+  border: 0;
+}
+button:hover{
+  background-color: #0184a0;
+}

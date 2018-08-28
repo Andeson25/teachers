@@ -1,0 +1,15 @@
+<div class="container-fluid p-0 position-relative"  >
+  <div class="image" [ngStyle]="{'background-image':'url('+(user.image|ImgPipe)+')'}">
+
+  </div>
+  <div class="text d-flex flex-column ">
+    <a href="#" [routerLink]="['/user-profile', user.id]">{{user.name}} {{user.lastname}}</a>
+    <h3 *ngFor="let specialization of user.specializations">{{specialization.name}}</h3>
+    <h4 >{{user.placeOfWork.name}}</h4>
+    <button class="align-self-center" (click)="startChat()">
+      <p>Написати </p>
+      <p>повідомлення</p>
+    </button>
+  </div>
+  <img *ngIf="currentUserRole=='MODERATOR'" class=" position-absolute delete" style="height: 25px; bottom: 5px; left: 10px; width: 25px;  cursor: pointer; z-index: 5" (click)="delete()" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+</div>

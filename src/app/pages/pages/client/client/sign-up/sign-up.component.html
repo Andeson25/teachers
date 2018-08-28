@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="sing-up  m-md-auto">
+    <div class="heading d-flex">
+      <h2>СТВОРІТЬ ОБЛІКОВИЙ ЗАПИС</h2>
+    </div>
+    <form class="d-flex flex-column flex-md-row row m-0 " [formGroup]="userForm" (ngSubmit)="createUser(userjd)" #userjd>
+      <div class="add-image col-md-12 col-xl-4 ">
+        <img [src]="url" *ngIf="url!=''" alt="{{user.name}}">
+        <div class="choose-image d-flex align-items-center justify-content-center" *ngIf="url==''">
+          <h2 class="text-center">ВАШЕ ФОТО</h2>
+        </div>
+        <label for="file" class="d-flex align-items-center justify-content-center text-center">ВИБЕРІТЬ ФОТО*
+          <input type="file"
+                 name="file"
+                 (change)="readUrl($event)"
+                 id="file"
+                 #image
+          />
+        </label>
+      </div>
+      <div class="inputs col-md-12  col-xl-8">
+        <h3>ІМ'Я:</h3><h4>*обов'язково</h4>
+        <input type="text" formControlName="name" >
+        <h3>ПРІЗВИЩЕ:</h3><h4>*обов'язково</h4>
+        <input type="text" formControlName="lastname">
+        <h3>ПО-БАТЬКОВІ:</h3><h4>*обов'язково</h4>
+        <input type="text" formControlName="surname">
+        <p>(введіть та додайте)</p>
+        <h3>СПЕЦІАЛІЗАЦІЯ:</h3><h4>*обов'язково</h4>
+        <div class="add" style="margin-bottom: 30px">
+          <input type="text" #specInput formControlName="specializations" style="margin-bottom: 0;" #str
+                 (keyup.enter)="addStr(str)" list="specializationList">
+          <datalist id="specializationList">
+            <option *ngFor="let spec of specializations" value="{{spec.name}}">
+          </datalist>
+          <img class="add" src="../../../../../../assets/svg/plus.svg" (click)="addStr(str)" alt="">
+          <div>
+
+            <h3 *ngFor="let str of specializationStr; index as id"  class="d-flex align-items-center"  > <img (click)="deleteStr(id)" class="deleteImg" src="../../../../../../assets/svg/cancel-button.svg" style="height: 15px; width: auto" alt="">{{str}}</h3>
+          </div>
+        </div>
+        <form formGroupName="placeOfWork" class="form-nopdd">
+          <h3>МІСЦЕ РОБОТИ ТА АДРЕСУ:</h3><h4>*обов'язково</h4>
+          <input type="text" formControlName="name" list="placeOfWorkList">
+          <datalist id="placeOfWorkList">
+            <option *ngFor="let work of placeOfWorks" value="{{work.name}}">
+          </datalist>
+        </form>
+        <h3>ПОСАДА:</h3><h4>*обов'язково</h4>
+        <select  formControlName="incumbency" >
+          <option value="" disabled selected hidden>Виберіть посаду</option>
+          <option [value]="'DIRECTOR'"   >Директор</option>
+          <option [value]="'TEACHER'"   >Вчитель</option>
+          <option [value]="'COUCH_MENTOR'">Коуч</option>
+          <option [value]="'HEAD_TEACHER'">Завуч</option>
+          <option [value]="'OTHER'"   >Інша</option>
+        </select>
+        <h3>НОМЕР ТЕЛЕФОНУ:</h3>
+        <input type="tel" [textMask]='{mask: this.telPattern}' formControlName="phone" placeholder="38 (__)-__-__-___">
+        <h3>ЕЛЕКТРОННА ПОШТА:</h3><h4>*обов'язково</h4>
+        <input type="email" formControlName="email" #email>
+        <h3>ПОСИЛАННЯ НА FACEBOOK:</h3>
+        <input type="email" id="email" formControlName="facebookLink" #facebookLink>
+        <h3 class="emailValid" style="color: red; width: 100%">Неправильний формат</h3>
+        <h3>ПАРОЛЬ:</h3><h4>*обов'язково</h4>
+        <input type="password" #firstPass formControlName="password">
+        <h3>ПОВТОРИТИ ПАРОЛЬ:</h3><h4>*обов'язково</h4>
+        <input type="password" #secondPass>
+        <button  type="submit"  [disabled]="!userForm.valid||disabled"><i #load style="display: none;"  class="fa  fa-spinner fa-spin"></i>  Створити обліковий запис</button>
+        <h3 *ngIf="exists" style="color: red; width: 100%">Користувач з такою електронною адресою вже існує</h3>
+        <h3 *ngIf="photo" class="text-center" style="color: red; width: 100%">Фотографія обовязкова</h3>
+        <h3 *ngIf="spec" class="text-center" style="color: red; width: 100%">Додайте спеціалізацію</h3>
+        <h3 *ngIf="facebook" class="text-center" style="color: red; width: 100%">Додайте посилання на фейсбук</h3>
+      </div>
+    </form>
+  </div>
+</div>

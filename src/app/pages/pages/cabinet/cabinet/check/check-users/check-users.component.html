@@ -1,0 +1,5 @@
+<div class="container pt-5 pb-5">
+  <div class="row flex-wrap d-flex">
+    <app-user-card (update)="update()" class="col-lg-4"  *ngFor="let user of users" [user]="user" ></app-user-card>
+  </div>
+</div>

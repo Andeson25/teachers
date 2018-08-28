@@ -1,0 +1,13 @@
+<div class="container d-flex flex-column  align-items-center">
+  <h3>Створити опитувальник</h3>
+<h4>Додайте категорії до опитувальника</h4>
+  <div class="label-cont  align-items-start  row m-0 d-flex flex-wrap">
+    <div class="cont col-3 pl-0"  *ngFor="let one of courseCategories;let i = index">
+  <label class="checkbox  d-flex  align-items-center " style="display:block;">
+  <input class="mr-1"   #checkbox (click)="deleteCheck(checkbox,i,one)" type="checkbox" >
+    <p style="font-family: OpenSans; font-size: 18px; line-height: 24px; margin: 0">{{one.name}}</p>
+  </label>
+    </div>
+  </div>
+<button (click)="saveQuestionnaire()" [disabled]="courseCategoriesToQuestionnaire.length==0" >Створити</button>
+</div>

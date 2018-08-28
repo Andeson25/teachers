@@ -1,0 +1,373 @@
+.container-fluid {
+  padding: 0 0 30px 0;
+  width: 92vw;
+  margin: 0 auto;
+  min-height: 63vh;
+  padding-top: 30px;
+}
+
+.main_form {
+  background: #fff;
+  padding: 6vh 15%;
+  min-height: 44vh;
+}
+
+.name_label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4vh;
+}
+
+.name_label img {
+  height: 22px;
+  width: auto;
+  margin-top: -7px;
+}
+
+.name_label input {
+  width: 100%;
+  padding: 1vh 1%;
+  font-size: 20px;
+}
+
+.user_photo {
+  margin-right: 20px;
+  height: auto;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.addImg {
+
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(1, 132, 160, .3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.addImg span img {
+  height: 70px;
+  width: auto;
+}
+
+.addImg span {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.addImg span p {
+  font-family: OpenSans;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 30px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.user_main_info {
+  height: auto!important;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+.container_btn {
+  padding-bottom: 30px;
+}
+
+.container_btn button {
+  padding: 1.5vh 2vw;
+  background: #00a3c6;
+  color: #fff;
+  border: 0;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.index_form_container {
+  width: 100%;
+}
+
+.container_btn button:hover {
+  background: #0184a0;
+}
+
+.user_info {
+  height: auto;
+}
+
+.user_info label {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #c0bfbf;
+  padding: 10px 0;
+}
+  p{
+    font-size: 16px;
+    line-height: 24px;
+    font-family: OpenSans;
+  }
+.user_info img {
+  height: 22px;
+  width: auto;
+  margin-top: -7px;
+}
+
+.user_info label input {
+  font-size: 16px;
+  line-height: 30px;
+  font-family: OpenSansBold;
+  padding: 1vh 1vw;
+  width: 70%;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  margin-bottom: 3vh;
+  border-bottom: 2px solid #c0bfbf;
+}
+
+textarea {
+  width: 100%;
+  display: block;
+  height: 170px;
+  resize: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: OpenSans;
+  border-color: #a9a9a9;
+  margin-bottom: 3vh;
+}
+
+.user_info label {
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.user_info div:first-child {
+
+  border: 2px solid #c0bfbf;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 7px;
+  padding: 10.6px 0;
+}
+
+.user_info div > p {
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.gallery_wrapper {
+  width: 100%;
+  font-size: 0;
+}
+
+.item_photo {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  vertical-align: top;
+  background: #cccccc;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.item_photo form label {
+  cursor: pointer;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+#addImg {
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.item_photo form {
+  border: 2px dashed #0184a0;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: calc(100%);
+
+  height: 100%;
+
+}
+
+.item_photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.delete_photo {
+  z-index: 3;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  text-align: center;
+  background: #999999;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pdd {
+  width: 100%;
+  height: 20vh;
+  margin-bottom: 30px;
+  padding: 0 30px 0 0;
+}
+
+.item_photo {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center 25% !important;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: #cccccc;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal-dialog {
+  margin: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.modal-content {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.cancel-model-img {
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  height: 50px;
+  width: 50px;
+}
+
+.modal-img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.name-lastname-surname {
+  font-size: 22px;
+  line-height: 30px;
+  font-family: OpenSansBold;
+}
+
+div.pdd {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 0 30px 0 0;
+  width: 25vw !important;
+  height: 12.5vw !important;
+}
+
+.item_photo:hover .hover {
+   cursor: pointer;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: 2;
+   background-color: rgba(1, 132, 160, .7);
+ }
+
+figure:hover .hover {
+  z-index: 4;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(1, 132, 160, .7);
+}
+.user_photo{
+  position: relative;
+}
+
+figure{
+  z-index: 3;
+  position: relative;
+}
+figure:hover  .hover img{
+  width: 40%;
+}
+.item_photo:hover .hover img {
+  width: 40%;
+}
+
+.hover img {
+  width: 0;
+  display: block !important;
+}
+
+div.pdd:nth-child(4n) {
+  padding: 0;
+}
+
+@media (max-width: 991.98px) {
+  figure{
+    margin-right: 0!important;
+  }
+  .user_main_info{
+    padding: 0;
+  }
+  div.pdd.col-md-6 {
+    width: 50vw !important;
+    height: 25vw !important;
+  }
+
+  div.pdd:nth-child(2n) {
+    padding: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  div.pdd.col-md-6.col-lg-3 {
+    padding: 0;
+    width: 100vw !important;
+    height: 50vw !important;
+  }
+}

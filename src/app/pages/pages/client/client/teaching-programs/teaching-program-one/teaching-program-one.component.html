@@ -1,0 +1,19 @@
+<div class=" heading  d-flex align-items-center ">
+  <h2>{{teachingProgramContainer.name}}</h2>
+</div>
+<div class="main d-flex row m-0  pl-0">
+  <div class="content col-md-9 mb-3 mt-5" *ngIf="teachingPrograms.length!=0">
+    <div class="programs" *ngFor="let one of teachingPrograms">
+      <a href="{{one.file.path|ImgPipe}}" >
+        <img class="align-self-start" src="../../../../../../../../assets/png/BlackDot.png" alt="">
+        {{one.name}}
+        <img src="../../../../../../../assets/svg/download%20(1).svg" alt="">
+      </a>
+      <img *ngIf="user.role=='MODERATOR'" class=" delete" style="height: 25px; width: 25px;  cursor: pointer; z-index: 5" (click)="deletes(one)" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+    </div>
+  </div>
+  <div class="d-flex pl-0 col-md-9 justify-content-center align-items-start" *ngIf="teachingPrograms.length==0">
+    <h2>Немає навчальних програм</h2>
+  </div>
+  <app-advertisment class="col-md-3 pr-0"></app-advertisment>
+</div>

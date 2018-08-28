@@ -1,0 +1,36 @@
+button{
+  margin-top: 30px;
+}
+.dropdown .dropdown-menu{
+  display: block!important;
+}
+label, button, input[type='submit'] {
+  margin-top: 40px;
+  padding: 5px 10px;
+  margin-bottom: 0;
+  background-color: #00a3c6;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+  border: 0;
+}
+button:hover{
+  background-color: #0184a0;
+}
+
+.checkbox{
+  margin-top: 0;
+  margin-bottom: 25px;
+
+}
+
+.label-cont{
+  width: 100%;
+}
+.cont:nth-child(4n){
+  padding-right: 0;
+}
+.cont{
+  padding-right: 25px;
+}

@@ -1,0 +1,80 @@
+<div class="container-fluid" *ngIf="bool">
+  <div class="main_form">
+    <label class="name_label" style="font-size: 24px; line-height: 30px; font-family: OpenSansBold;">
+      {{(user.lastname|nou)+' '+(user.name|nou)+' '+(user.surname|nou)}}
+    </label>
+    <div class="index_form_container d-flex row  m-0  align-items-start">
+      <figure (click)="showFullSizeImg(user.image)" data-toggle="modal" data-target="#exampleModal" class="user_photo col-lg-5 pl-0  pr-0" >
+        <img  src="{{user.image|ImgPipe|nou}}" alt="" >
+        <div class="  hover d-flex align-items-center justify-content-center" >
+          <img src="../../../../../../assets/svg/search.svg" alt="">
+        </div>
+      </figure>
+      <div class="user_main_info col">
+        <div class="user_info  ">
+          <div class="d-flex justify-content-start align-items-start " style="border-bottom: 2px solid #c0bfbf; border-top: 2px solid #c0bfbf; padding: 10px 0; margin-bottom: 0">
+            <span style=" font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 30px;">Спеціалізації: </span>
+            <div class="d-inline-block  p-0">
+              <p style="padding: 0 1vw;height: 30px; width: auto; margin-bottom: 0;" class="d-inline-block p-0"
+                 *ngFor="let specialization of user.specializations;let i=index">
+                <span style="margin-left: 5px;"> {{specialization.name|nou}}</span><span style="" class="d-inline-block"
+                                                              *ngIf="i!=user.specializations.length-1">, </span></p>
+            </div>
+          </div>
+          <label >
+            <span>
+             Місце роботи: {{user.placeOfWork.name|nou}}
+            </span>
+          </label>
+          <label>
+            <span>
+              Номер телефону: <span>{{user.phone|nou}}</span>
+            </span>
+          </label>
+          <label *ngIf="user.facebookLink != ''">
+            <span>
+              <a target="_blank" href="{{user.facebookLink}}">Посилання на Facebook</a>
+            </span>
+          </label>
+          <label>
+            <span>
+              Посада: <span>{{incumbency[user.incumbency|nou]}}</span>
+            </span>
+          </label>
+          <label>
+            <span>
+              Електронна адреса: <span>{{user.email|nou}}</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <h2>Короткий опис</h2>
+    <p *ngIf="user.information">{{user.information|nou}}</p>
+    <p *ngIf="user.information==null||user.information==undefined">Немає інформації</p>
+    <h2>Моя галерея</h2>
+    <div class="gallery_wrapper d-flex flex-wrap">
+      <p *ngIf="user.files==null||user.files==undefined||user.files.length==0">Немає фото</p>
+      <div class=" pdd col-md-6 col-lg-3" *ngFor="let image of user.files">
+        <div class="item_photo  " data-toggle="modal" data-target="#exampleModal"
+             (click)="showFullSizeImg(image.path)"
+             [style.backgroundImage]="'url('+ (image.path|ImgPipe) +')'">
+          <div class="  hover d-flex align-items-center justify-content-center" >
+            <img src="../../../../../../assets/svg/search.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true" #modalContainer>
+    <div class="modal-dialog  " role="document">
+      <div class="modal-content " style="background: transparent; border: none">
+        <img [src]="bigImageSrc" #bigImage alt="" class="modal-img  ">
+        <img data-dismiss="modal" class="cancel-model-img" src="../../../../../../assets/svg/cancel-button.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

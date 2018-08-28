@@ -1,0 +1,93 @@
+.container-fluid {
+  padding: 3vh 0;
+  width: 92%;
+  margin: 6vh auto;
+  min-height: 46vh;
+  background: #fff;
+
+}
+
+.index_container {
+  width: 60%;
+  padding: 3vh 2vw;
+
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 3vh;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 2vh;
+  display: block;
+}
+
+label input {
+  display: block;
+  width: 80%;
+  font-size: 16px;
+  line-height: 1.1;
+  padding: 3px 5px;
+}
+
+label select {
+  display: block;
+  width: 80%;
+  font-size: 16px;
+  line-height: 1.1;
+  cursor: pointer;
+  padding: 3px 5px;
+}
+
+label textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+label button {
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+  line-height: 1;
+  padding: 1vh 2vw;
+  background: #00a3c6;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+input.ng-invalid.ng-dirty{
+  border: 1px solid red;
+}
+
+textarea.ng-invalid.ng-dirty{
+  border: 1px solid red;
+}
+
+label{
+}
+label > div{
+  width: 80%;
+}
+.text_area{
+  width: 100% !important;
+}
+.invalidDiv {
+  display: block;
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 24px;
+  color: red;
+}
+@media (max-width: 991.98px) {
+  form.index_container{
+    width: 100% !important;
+  }
+}

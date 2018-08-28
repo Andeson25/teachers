@@ -1,0 +1,19 @@
+<form  class="container  pb-5 d-flex justify-content-start align-items-center flex-column" [formGroup]="forumSectionForm" (submit)="addForumSection()" #forumSectionJson>
+  <h2>Додати підрозділ форуму</h2>
+  <input type="text" placeholder="Назва" formControlName="header">
+  <textarea placeholder="Опис" formControlName="description"></textarea>
+  <h2>Виберіть розділ</h2>
+  <select name="container" formControlName="container" #select (change)="showForm(select)">
+    <option disabled selected [value]=''>Виберіть розділ</option>
+    <option value="1">Створити новий розділ</option>
+    <option *ngFor="let one of containers" [ngValue]="one">{{one.header}}</option>
+  </select>
+
+  <form class="d-flex mt-3" [formGroup]="forumSectionContainerForm" *ngIf="checkForm"
+        (ngSubmit)="addForumSectionContainer(select)">
+    <input type="text" placeholder="Назва" formControlName="header">
+    <button style="height: 40px; margin: 0;" type="submit" [disabled]="!forumSectionContainerForm.valid">Додати</button>
+  </form>
+
+  <button type="submit" [disabled]="!forumSectionForm.valid&&!validSelect(select)">Додати підрозділ форуму</button>
+</form>

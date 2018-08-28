@@ -1,0 +1,6 @@
+<div>
+  <div class="cont d-flex flex-column align-items-center" *ngFor="let one of teachingProgramContainerList" [routerLink]="[one.id]">
+    <h2>{{one.name}}</h2>
+    <h2>Кількість програм: {{(one.programs|nou).length}}</h2>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <form [formGroup]="addForumForm" class="index_container" (ngSubmit)="sendForm()">
+    <h2>Нова тема</h2>
+    <label class="d-flex justify-content-between align-items-start">
+      Назва
+      <div class="d-flex flex-column ">
+        <input (change)="checkValid()" (blur)="checkValid()" class="w-100" formControlName="header" type="text" #input>
+        <div class="invalidDiv" *ngIf="invalidInp">Мінімальна довжина 5 символів</div>
+      </div>
+    </label>
+    <label class="d-flex justify-content-between align-items-center">
+      Розділ*
+      <select formControlName="forumSection" #selectParts required>
+        <option disabled selected value="null">Виберіть розділ</option>
+        <option *ngFor="let one of forumSections" [ngValue]="one">{{one.header}}</option>
+      </select>
+    </label>
+    <label>
+      Опис теми: <br>
+      <div class="d-flex flex-column text_area ">
+        <textarea (change)="checkValid()" (blur)="checkValid()"  #text formControlName="text"></textarea>
+        <div class="invalidDiv" *ngIf="invalidText">Мінімальна довжина 5 символів</div>
+      </div>
+    </label>
+    <label class="clearfix">
+      <button [disabled]="addForumForm.invalid" type="submit">Додати тему</button>
+    </label>
+  </form>
+</div>

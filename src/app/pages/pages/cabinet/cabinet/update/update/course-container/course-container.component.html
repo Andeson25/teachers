@@ -1,0 +1,10 @@
+<div class="row flex-wrap ml-1 mr-1">
+  <div class="  card-wrap col-6" *ngFor="let one of courseList">
+    <div class="wrap" [routerLink]="[one.id]">
+    <h1 class="text-center">{{one.header|nou}}</h1>
+      <figure [ngStyle]="{'background-image':'url('+(one.image|ImgPipe)+')'}">
+
+      </figure>
+  </div>
+  </div>
+</div>

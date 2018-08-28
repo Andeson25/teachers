@@ -1,0 +1,77 @@
+<div class="container-fluid">
+
+  <div class=" heading row align-items-start flex-column d-flex justify-content-center">
+    <h6>ПЕРЕЛІК</h6>
+    <h2>ВЧИТЕЛІВ УКРАЇНИ</h2>
+  </div>
+
+  <div class="content row ml-0 mr-0  ">
+    <div [ngClass]="{'d-flex':isAuth==false, 'd-none': isAuth==true}"
+         class="not-autorized  col-12 col-md-9 p-4  align-items-center justify-content-center flex-column">
+      <h2 style="font-family: OpenSansBold; font-size: 18px; line-height: 24px;">Переглядати сторінку “Вчителі України”
+        можуть лише
+        авторизовані користувачі.</h2>
+      <button class="d-flex align-items-center justify-content-center" routerLink="/sign-in">Увійти</button>
+    </div>
+    <div id="scroll" [ngClass]="{'d-block':isAuth==true, 'd-none': isAuth==false}" class="col-lg-9  pl-0 pr-0">
+      <div
+        class="filter-headings d-flex flex-column flex-md-row justify-content-between  align-items-center align-items-md-start "
+        style="height: 30px;padding-right: 30px;">
+        <div class="d-flex">
+          <img src="../../../../../../assets/svg/filter-tool-black-shape.svg"
+               style="width: auto; height: 15px; margin: auto 0" alt="">
+          <h2 style="font-family: OpenSans; margin-bottom: 0; font-size: 16px; line-height: 30px;">Фільтр</h2>
+        </div>
+        <h2 class="d-md-block d-none"
+            style="font-family: OpenSans; margin-bottom: 0; font-size: 16px; line-height: 30px;">Пошук школи</h2>
+      </div>
+      <div
+        class="filters d-flex  align-items-center align-items-md-start flex-md-row flex-column justify-content-between">
+        <div class="filter-subject" tabindex="1" (blur)="hide(subjects)">
+          <h2 class="" style="overflow: hidden" (click)="show(subjects)" #filterText>Предмет</h2>
+          <img
+            src="../../../../../../assets/svg/drop-down-arrow.svg"
+            #arrowImg
+            alt="">
+          <div class="subjects" #subjects>
+            <h2 class="" (click)="filterUsersSpecialization('Предмет',placeOfWorkInputStr.value,filterText)">Без фільтрації</h2>
+            <h2 class="" *ngFor="let specialization of specializations"
+                (click)="filterUsersSpecialization(specialization.name, placeOfWorkInputStr.value,filterText)">
+              {{specialization.name}}</h2>
+          </div>
+        </div>
+        <input placeholder="Введіть школу" #placeOfWorkInputStr
+               (change)="filterUsersPlaceOfWork(filterText,placeOfWorkInputStr.value)" class="filter-school"
+               list="specializationList" type="text">
+        <datalist id="specializationList">
+          <option *ngFor="let placeOfWork of placeOfWorks" value="{{placeOfWork.name}}">
+        </datalist>
+      </div>
+      <div class="teachers">
+        <div class="d-flex flex-wrap align-items-start  pl-0 pr-0">
+          <app-teacher-card (deleteUser)="delete($event)" *ngFor="let user of users"  [user]="user" class=" pl-0  col-md-6 col-lg-4"
+          ></app-teacher-card>
+        </div>
+        <div *ngIf="users.length==0" class="d-flex align-items-start justify-content-center">
+          <h2>Немає вчителів</h2>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item"  scrollTo scrollTargetSelector="#scroll" (click)="prePage()" *ngIf="!backBool" >
+              <a class="page-link" href="#" tabindex="-1" >Назад</a>
+            </li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage-2)" *ngIf="!backBool&&!(currentPage<=2)" >{{currentPage-2}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage-1)" *ngIf="!backBool" >{{currentPage-1}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" style="background-color: #00a3c6; color: white;" (click)="loadPage(currentPage)" >{{currentPage}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage+1)" *ngIf="(currentPage+1<=numberOfAllPages)" >{{currentPage+1}}</a></li>
+            <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" (click)="loadPage(currentPage+2)" *ngIf="(currentPage+2<=numberOfAllPages)" >{{currentPage+2}}</a></li>
+            <li *ngIf="(currentPage!=numberOfAllPages)" class="page-item" scrollTo scrollTargetSelector="#scroll">
+              <a class="page-link" (click)="nextPage()"  >Далі</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <app-advertisment class=" col-lg-3  pr-0 w-100"></app-advertisment>
+  </div>
+</div>

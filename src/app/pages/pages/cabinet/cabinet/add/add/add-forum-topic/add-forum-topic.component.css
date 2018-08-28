@@ -1,0 +1,52 @@
+h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-family: OpenSans;
+}
+
+input {
+  width: 250px;
+  font-family: OpenSans;
+  padding-left: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 250px;
+  width: 500px;
+  padding: 10px 10px;
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 24px;
+  resize: none;
+  margin-bottom: 30px;
+}
+
+label, button, input[type='submit'] {
+  padding: 5px 10px;
+  background-color: #00a3c6;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+}
+
+label:hover, button:hover, input[type='submit']:hover {
+  background-color: #0184a0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+figure {
+  background-color: #c0bfbf;
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+}

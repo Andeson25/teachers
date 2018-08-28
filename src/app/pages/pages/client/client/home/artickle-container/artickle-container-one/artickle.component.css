@@ -1,0 +1,82 @@
+.container{
+  height: auto;
+  width: 100%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-family: OpenSans;
+}
+img{
+  height: auto;
+  width: 100%;
+}
+figure{
+  max-height: 400px;
+}
+.delete{
+  right: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.leftMarg{
+  margin-right: 0;
+  padding-right: 0;
+}
+hr{
+  margin: 0;
+  border-color: #CBCBCB;
+  border-width: .3vh;
+}
+.row{
+   width: 100%;
+
+ }
+.leftMarg{
+  padding-left: 0px;
+}
+a{
+  font-family: OpenSans;
+  color:#0184a0 ;
+  height: auto;
+  width: 100%;
+  font-size: 21px;
+  line-height: 24px;
+}
+
+.metadata img {
+  height: 16px;
+  width: auto;
+  filter: invert(20%);
+}
+.metadata img:not(:first-child){
+  margin-left: 1vw;
+}
+.metadata{
+  font-family: OpenSansLight;
+  margin-top: 1vh;
+  height: 2.5vh;
+  margin-bottom: 1vh;
+}
+.myClass{
+  margin-left: 0;
+  margin-right: 0;
+}
+.text{
+  width: 100%;
+  height: auto;
+}
+.metadata h5{
+  color: #afafaf;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 .7vw 0 .2vw ;
+}
+.text p {
+  font-family: OpenSans;
+  margin: 0;
+  color: black;
+  font-size: 14px;
+  line-height: 18px;
+}
+.content{
+  height: 20vh;
+}

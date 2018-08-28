@@ -1,0 +1,31 @@
+<div class="container  pb-5 d-flex justify-content-start align-items-center flex-column">
+  <h2>Додавання курсу</h2>
+  <form class="container row m-0" [formGroup]="courseForm" (ngSubmit)="addCourse(imageForm,fileE)" #imageForm>
+    <div class="col-md-3 p-0">
+    <figure class="m-0"  [ngClass]="{'background':img==null||img==undefined}">
+      <img *ngIf="img!=null||img!=undefined||img==''" src="{{img}}" alt="img">
+    </figure>
+    <label style="width: 100%; text-align: center" for="file">Додати фото</label>
+    </div>
+    <div class="col-md-9 pl-3 pr-0">
+    <input type="text" placeholder="Заголовок" formControlName="header">
+      <input type="text" placeholder="Посилання" formControlName="link">
+      <select name="courseCategory" formControlName="courseCategory"    #select (change)="changeValue(select)">
+        <option disabled selected value=''>Виберіть категорію</option>
+        <option value="new">Створити нову</option>
+        <option *ngFor="let one of categories" [ngValue]="one">{{one.name}}</option>
+      </select>
+      <form class="d-flex " *ngIf="createCategory" [formGroup]="categoryForm" (submit)="addCategory(select)">
+        <input type="text" placeholder="Ім'я" formControlName="name">
+        <button style="height: 40px"  type="submit">Додати категорію</button>
+      </form>
+      <select required name="type" formControlName="type">
+        <option disabled selected value="">Виберіть тип</option>
+        <option *ngFor="let key of getTypeKeys()" [ngValue]="key">{{types.get(key)}}</option>
+      </select>
+      <textarea type="text" placeholder="Опис" formControlName="description"></textarea>
+    <input required (change)="readUrl($event)" #fileE class="d-none" id="file" type="file" name="file">
+    </div>
+    <button [disabled]="!courseForm.valid||fileE.value==''||fileE.value==null||fileE.value==undefined" style="margin-left: auto; margin-right: auto; padding: 5px 10px; margin-top: 40px" type="submit" >Додати</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<form class=" container pb-5 d-flex justify-content-start align-items-center flex-column" [formGroup]="teachingProgramForm" (ngSubmit)="addTeachingProgram(teachingProgramJson,file)" #teachingProgramJson>
+  <h2>Додати навчальну програму</h2>
+  <input type="text" placeholder="Назва" formControlName="name">
+  <input required  id="file" (change)="getFileName(file)" #file class="border-0 d-none" type="file" name="multipartFile" >
+  <h2 class="mb-1 mt-1">{{fileName}}</h2>
+  <label style="margin-top: 20px; margin-bottom: 20px;" for="file">Додайте файл</label>
+  <h3>Виберіть розділ</h3>
+  <select required name="container" formControlName="container" #select (change)="showForm(select)">
+    <option *ngFor="let one of containers" [value]="stringify(one)">{{one.name}}</option>
+    <option value="1">Створити новий розділ</option>
+    <option value="" selected disabled hidden>Виберіть розділ</option>
+  </select>
+
+  <form  class="d-flex mt-3" [formGroup]="teachingProgramContainerForm" *ngIf="checkForm"
+        (ngSubmit)="addTeachingProgramContainer()">
+    <input type="text" placeholder="Назва" formControlName="name">
+    <button style="margin: 0; height: 40px" type="submit" [disabled]="!teachingProgramContainerForm.valid">Додати</button>
+  </form>
+
+  <button type="submit" [disabled]="!teachingProgramForm.valid">Додати навчальну програму</button>
+</form>

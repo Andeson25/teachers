@@ -1,0 +1,15 @@
+<div *ngIf="show" class=" cont  " [routerLink]="['/article', 'one', popularArticle.id]"
+     [ngStyle]="{'background-image':'url('+(popularArticle.image|ImgPipe|nou)+')'}">
+  <span class="d-flex flex-column justify-content-end align-items-start">
+  <div class="row text m-0 p-0">
+    <h4 class="col-12">{{popularArticle.header|nou}} </h4>
+  </div>
+  <div class="metadata row   d-flex justify-content-start align-items-center">
+    <img src="../../../../../../../../assets/svg/time.svg" alt="time">
+    <h5>{{popularArticle.datetime|date|nou}}</h5>
+    <img src="../../../../../../../../assets/svg/comment-black-rectangular-speech-bubble-interface-symbol.svg"
+         alt="time">
+    <h5>{{popularArticle.comments.length|nou}}</h5>
+  </div>
+</span>
+</div>

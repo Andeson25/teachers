@@ -1,0 +1,398 @@
+<div class="row d-none d-md-flex d-flex justify-content-between pl-md-3 pr-md-3">
+  <div routerLink="/" style="cursor: pointer; outline: none" class=" top col-md-5 pl-4  d-flex justify-content-start  align-items-center "><img class=""
+                                                                                                                                                src="../../../../../../../assets/logo/Logo_header.png"
+                                                                                                                                                alt="">
+    <a class="admin" style="text-decoration: none;" href="" routerLink="/cabinet" *ngIf="user.role=='MODERATOR'&&isAuth==true">
+      <p class="">Адміністратор</p>
+    </a></div>
+
+  <div class="user-menu top  col-md-6  d-flex  justify-content-end align-items-center   "
+  >
+
+    <a routerLink="/my-profile" class="justify-content-center d-flex user  mr-5" [ngClass]="{'d-flex':isAuth==true, 'd-none': isAuth==false}" href="">
+      <span class="rounded-circle align-self-center " [style.backgroundImage]="'url('+ (user.image|ImgPipe) +')'" ></span>
+      <p class="d-flex align-items-center">{{user.name+" "+user.lastname}}</p>
+    </a>
+    <a routerLink="/chat" [ngClass]="{'d-flex':isAuth==true, 'd-none': isAuth==false}" class=" messages  mr-5" href="">
+      <span *ngIf="messages!=0" class="messagesCount d-flex align-items-center justify-content-center">{{messages}}</span>
+      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="511.626px" height="511.626px" viewBox="0 0 511.626 511.626" style="enable-background:new 0 0 511.626 511.626;"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="#515151" d="M49.106,178.729c6.472,4.567,25.981,18.131,58.528,40.685c32.548,22.554,57.482,39.92,74.803,52.099
+			c1.903,1.335,5.946,4.237,12.131,8.71c6.186,4.476,11.326,8.093,15.416,10.852c4.093,2.758,9.041,5.852,14.849,9.277
+			c5.806,3.422,11.279,5.996,16.418,7.7c5.14,1.718,9.898,2.569,14.275,2.569h0.287h0.288c4.377,0,9.137-0.852,14.277-2.569
+			c5.137-1.704,10.615-4.281,16.416-7.7c5.804-3.429,10.752-6.52,14.845-9.277c4.093-2.759,9.229-6.376,15.417-10.852
+			c6.184-4.477,10.232-7.375,12.135-8.71c17.508-12.179,62.051-43.11,133.615-92.79c13.894-9.703,25.502-21.411,34.827-35.116
+			c9.332-13.699,13.993-28.07,13.993-43.105c0-12.564-4.523-23.319-13.565-32.264c-9.041-8.947-19.749-13.418-32.117-13.418H45.679
+			c-14.655,0-25.933,4.948-33.832,14.844C3.949,79.562,0,91.934,0,106.779c0,11.991,5.236,24.985,15.703,38.974
+			C26.169,159.743,37.307,170.736,49.106,178.729z"/>
+		<path  fill="#515151"  d="M483.072,209.275c-62.424,42.251-109.824,75.087-142.177,98.501c-10.849,7.991-19.65,14.229-26.409,18.699
+			c-6.759,4.473-15.748,9.041-26.98,13.702c-11.228,4.668-21.692,6.995-31.401,6.995h-0.291h-0.287
+			c-9.707,0-20.177-2.327-31.405-6.995c-11.228-4.661-20.223-9.229-26.98-13.702c-6.755-4.47-15.559-10.708-26.407-18.699
+			c-25.697-18.842-72.995-51.68-141.896-98.501C17.987,202.047,8.375,193.762,0,184.437v226.685c0,12.57,4.471,23.319,13.418,32.265
+			c8.945,8.949,19.701,13.422,32.264,13.422h420.266c12.56,0,23.315-4.473,32.261-13.422c8.949-8.949,13.418-19.694,13.418-32.265
+			V184.437C503.441,193.569,493.927,201.854,483.072,209.275z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+    </a>
+    <a (click)="logout()" routerLink="/" [ngClass]="{'d-flex':isAuth==true, 'd-none': isAuth==false}"
+       class=" d-flex align-items-center" href="">
+      <p class="d-flex align-items-center log-out">Вийти</p>
+      <svg class="singin align-self-center" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path fill="#515151" d="M330.667,384h-21.333c-5.891,0-10.667,4.776-10.667,10.667v74.667h-256V42.667h256v74.667
+				c0,5.891,4.776,10.667,10.667,10.667h21.333c5.891,0,10.667-4.776,10.667-10.667V42.667C341.333,19.103,322.231,0,298.667,0h-256
+				C19.103,0,0,19.103,0,42.667v426.667C0,492.898,19.103,512,42.667,512h256c23.564,0,42.667-19.102,42.667-42.667v-74.667
+				C341.333,388.776,336.558,384,330.667,384z"/>
+			<path fill="#515151" d="M508.542,248.135l-128-117.333c-3.125-2.844-7.656-3.625-11.5-1.896c-3.875,1.698-6.375,5.531-6.375,9.76V160
+				c0,3.021,1.281,5.906,3.531,7.927l74.151,66.74H138.667c-5.896,0-10.667,4.771-10.667,10.667v21.333
+				c0,5.896,4.771,10.667,10.667,10.667h301.682l-74.151,66.74c-2.25,2.021-3.531,4.906-3.531,7.927v21.333
+				c0,4.229,2.5,8.063,6.375,9.76c1.375,0.615,2.844,0.906,4.292,0.906c2.615,0,5.198-0.969,7.208-2.802l128-117.333
+				C510.75,261.844,512,258.99,512,256S510.75,250.156,508.542,248.135z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+    </a>
+    <a routerLink="/sign-in" [ngClass]="{'d-flex':isAuth==false, 'd-none': isAuth==true}" href="">
+      <svg version="1.1" class="singin align-self-center" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path fill="#515151" d="M469.333,0h-256c-23.564,0-42.667,19.103-42.667,42.667v74.667c0,5.891,4.776,10.667,10.667,10.667h21.333
+				c5.891,0,10.667-4.776,10.667-10.667V42.667h256v426.667h-256v-74.667c0-5.891-4.776-10.667-10.667-10.667h-21.333
+				c-5.891,0-10.667,4.776-10.667,10.667v74.667c0,23.564,19.102,42.667,42.667,42.667h256C492.898,512,512,492.898,512,469.333
+				V42.667C512,19.103,492.898,0,469.333,0z"/>
+			<path fill="#515151" d="M238.198,344.073c-2.25,2.021-3.531,4.906-3.531,7.927v21.333c0,4.229,2.5,8.063,6.375,9.76
+				c1.375,0.615,2.844,0.906,4.292,0.906c2.615,0,5.198-0.969,7.208-2.802l128-117.333C382.75,261.844,384,258.99,384,256
+				s-1.25-5.844-3.458-7.865l-128-117.333c-3.125-2.844-7.656-3.625-11.5-1.896c-3.875,1.698-6.375,5.531-6.375,9.76V160
+				c0,3.021,1.281,5.906,3.531,7.927l74.151,66.74H10.667C4.771,234.667,0,239.438,0,245.333v21.333
+				c0,5.896,4.771,10.667,10.667,10.667h301.682L238.198,344.073z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+      <p class="d-flex justify-content-center align-items-center">Увійти</p>
+    </a>
+  </div>
+</div>
+<nav class=" main-nav navbar  navbar-expand-md navbar-dark  ">
+  <div class="d-flex w-100 justify-content-between align-items-center d-block d-md-none" style="height: 12vh">
+  <a  class="  d-flex justify-content-start align-items-center d-md-none navbar-brand" href="#"><h1 style="font-size: 24px; line-height: 30px; margin: 0; font-family: OpenSansBold;">ГІЛЬДІЯ
+    ВЧИТЕЛІВ</h1></a>
+  <button class="ml-0 mb-0 mt-0 d-flex align-items-center justify-content-center d-md-none  navbar-toggler navbar-dark " type="button"
+          data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+  </div>
+  <div class="collapse navbar-collapse"  id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <div aria-controls="navbarNavAltMarkup"
+           aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+           class="d-md-none d-flex flex-column">
+      <div class="user-menu  d-md-none d-flex user-adaptive top     w-100  justify-content-center align-items-center">
+        <a routerLink="/my-profile" class="justify-content-center d-flex user col-4  mr-5" [ngClass]="{'d-flex':isAuth==true, 'd-none': isAuth==false}" href="">
+          <span class="rounded-circle align-self-center " [style.backgroundImage]="'url('+ (user.image|ImgPipe) +')'" ></span>
+          <p class="d-flex align-items-center  justify-content-center text-center">{{user.name+" "+user.lastname}}</p>
+        </a>
+        <a routerLink="/chat" [ngClass]="{'d-flex':isAuth==true, 'd-none': isAuth==false}" class=" messages col-4 position-relative  mr-5" href="">
+          <span *ngIf="messages!=0" class="messagesCount position-absolute d-flex align-items-center justify-content-center">{{messages}}</span>
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="511.626px" height="511.626px" viewBox="0 0 511.626 511.626" style="enable-background:new 0 0 511.626 511.626;"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="white" d="M49.106,178.729c6.472,4.567,25.981,18.131,58.528,40.685c32.548,22.554,57.482,39.92,74.803,52.099
+			c1.903,1.335,5.946,4.237,12.131,8.71c6.186,4.476,11.326,8.093,15.416,10.852c4.093,2.758,9.041,5.852,14.849,9.277
+			c5.806,3.422,11.279,5.996,16.418,7.7c5.14,1.718,9.898,2.569,14.275,2.569h0.287h0.288c4.377,0,9.137-0.852,14.277-2.569
+			c5.137-1.704,10.615-4.281,16.416-7.7c5.804-3.429,10.752-6.52,14.845-9.277c4.093-2.759,9.229-6.376,15.417-10.852
+			c6.184-4.477,10.232-7.375,12.135-8.71c17.508-12.179,62.051-43.11,133.615-92.79c13.894-9.703,25.502-21.411,34.827-35.116
+			c9.332-13.699,13.993-28.07,13.993-43.105c0-12.564-4.523-23.319-13.565-32.264c-9.041-8.947-19.749-13.418-32.117-13.418H45.679
+			c-14.655,0-25.933,4.948-33.832,14.844C3.949,79.562,0,91.934,0,106.779c0,11.991,5.236,24.985,15.703,38.974
+			C26.169,159.743,37.307,170.736,49.106,178.729z"/>
+		<path  fill="white"  d="M483.072,209.275c-62.424,42.251-109.824,75.087-142.177,98.501c-10.849,7.991-19.65,14.229-26.409,18.699
+			c-6.759,4.473-15.748,9.041-26.98,13.702c-11.228,4.668-21.692,6.995-31.401,6.995h-0.291h-0.287
+			c-9.707,0-20.177-2.327-31.405-6.995c-11.228-4.661-20.223-9.229-26.98-13.702c-6.755-4.47-15.559-10.708-26.407-18.699
+			c-25.697-18.842-72.995-51.68-141.896-98.501C17.987,202.047,8.375,193.762,0,184.437v226.685c0,12.57,4.471,23.319,13.418,32.265
+			c8.945,8.949,19.701,13.422,32.264,13.422h420.266c12.56,0,23.315-4.473,32.261-13.422c8.949-8.949,13.418-19.694,13.418-32.265
+			V184.437C503.441,193.569,493.927,201.854,483.072,209.275z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+        </a>
+        <a (click)="logout()" routerLink="/" [ngClass]="{'d-flex':isAuth==true, 'd-none': isAuth==false}"
+           class=" col-4 d-flex align-items-center justify-content-center" href="">
+          <p class="d-flex align-items-center">Вийти</p>
+          <svg class="singin align-self-center" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path fill="#515151" d="M330.667,384h-21.333c-5.891,0-10.667,4.776-10.667,10.667v74.667h-256V42.667h256v74.667
+				c0,5.891,4.776,10.667,10.667,10.667h21.333c5.891,0,10.667-4.776,10.667-10.667V42.667C341.333,19.103,322.231,0,298.667,0h-256
+				C19.103,0,0,19.103,0,42.667v426.667C0,492.898,19.103,512,42.667,512h256c23.564,0,42.667-19.102,42.667-42.667v-74.667
+				C341.333,388.776,336.558,384,330.667,384z"/>
+			<path fill="#515151" d="M508.542,248.135l-128-117.333c-3.125-2.844-7.656-3.625-11.5-1.896c-3.875,1.698-6.375,5.531-6.375,9.76V160
+				c0,3.021,1.281,5.906,3.531,7.927l74.151,66.74H138.667c-5.896,0-10.667,4.771-10.667,10.667v21.333
+				c0,5.896,4.771,10.667,10.667,10.667h301.682l-74.151,66.74c-2.25,2.021-3.531,4.906-3.531,7.927v21.333
+				c0,4.229,2.5,8.063,6.375,9.76c1.375,0.615,2.844,0.906,4.292,0.906c2.615,0,5.198-0.969,7.208-2.802l128-117.333
+				C510.75,261.844,512,258.99,512,256S510.75,250.156,508.542,248.135z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+        </a>
+        <a class="col-12" routerLink="/sign-in" [ngClass]="{'d-flex':isAuth==false, 'd-none': isAuth==true}" href="">
+          <svg version="1.1" class="singin align-self-center" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path fill="#515151" d="M469.333,0h-256c-23.564,0-42.667,19.103-42.667,42.667v74.667c0,5.891,4.776,10.667,10.667,10.667h21.333
+				c5.891,0,10.667-4.776,10.667-10.667V42.667h256v426.667h-256v-74.667c0-5.891-4.776-10.667-10.667-10.667h-21.333
+				c-5.891,0-10.667,4.776-10.667,10.667v74.667c0,23.564,19.102,42.667,42.667,42.667h256C492.898,512,512,492.898,512,469.333
+				V42.667C512,19.103,492.898,0,469.333,0z"/>
+			<path fill="#515151" d="M238.198,344.073c-2.25,2.021-3.531,4.906-3.531,7.927v21.333c0,4.229,2.5,8.063,6.375,9.76
+				c1.375,0.615,2.844,0.906,4.292,0.906c2.615,0,5.198-0.969,7.208-2.802l128-117.333C382.75,261.844,384,258.99,384,256
+				s-1.25-5.844-3.458-7.865l-128-117.333c-3.125-2.844-7.656-3.625-11.5-1.896c-3.875,1.698-6.375,5.531-6.375,9.76V160
+				c0,3.021,1.281,5.906,3.531,7.927l74.151,66.74H10.667C4.771,234.667,0,239.438,0,245.333v21.333
+				c0,5.896,4.771,10.667,10.667,10.667h301.682L238.198,344.073z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+          <p class="d-flex justify-content-center align-items-center">Увійти</p>
+        </a>
+      </div>
+
+
+        <a class="nav-item d-md-none d-flex" routerLink="/"><h2>Статті</h2></a>
+        <a class="nav-item d-md-none d-flex" routerLink="/courses" routerLinkActive="active_nav_bar"
+           [routerLinkActiveOptions]="{exact:true}"><h2>курси</h2></a>
+        <a class="nav-item d-md-none d-flex" routerLink="/teaching-program" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Навчальні <br> програми</h2></a>
+        <a class="nav-item d-md-none d-flex" routerLink="/law" routerLinkActive="active_nav_bar"
+           [routerLinkActiveOptions]="{exact:true}">
+        <h2>Закон про <br> освіту</h2></a>
+        <a class="nav-item d-md-none d-flex" routerLink="/teachers-of-ukraine" routerLinkActive="active_nav_bar"
+           [routerLinkActiveOptions]="{exact:true}"><h2>Вчителі <br> України</h2></a>
+        <a class="nav-item d-md-none d-flex" routerLink="/forum" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Форум</h2></a> <a class="nav-item d-md-none d-flex" routerLink="/about-us" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Про нас</h2></a>
+      </div>
+
+
+
+      <a class="nav-item d-none d-md-flex " routerLink="/"  ><h2>Статті</h2></a>
+      <a   class="nav-item  d-none d-md-flex " routerLinkActive="active_nav_bar"  routerLink="/courses" [routerLinkActiveOptions]="{exact:true}"><h2>курси</h2></a>
+      <a   class="nav-item  d-none d-md-flex" routerLink="/teaching-program" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Навчальні <br> програми</h2></a>
+      <a   class="nav-item d-none d-md-flex " routerLink="/law" routerLinkActive="active_nav_bar" [routerLinkActiveOptions]="{exact:true}">
+        <h2>Закон про <br> освіту</h2></a>
+      <a   class="nav-item d-none d-md-flex " routerLink="/teachers-of-ukraine" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Вчителі <br> України</h2></a>
+      <a   class="nav-item d-none d-md-flex " routerLink="/forum" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Форум</h2></a>
+      <a   class="nav-item d-none d-md-flex " routerLink="/about-us" routerLinkActive="active_nav_bar"
+         [routerLinkActiveOptions]="{exact:true}"><h2>Про нас</h2></a>
+
+
+
+    </div>
+  </div>
+</nav>

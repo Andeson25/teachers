@@ -1,0 +1,13 @@
+<div class="main">
+  <form class="d-flex flex-column align-items-center" [formGroup]="lawForm" (submit)="updateLaw()">
+    <h1 class="text-center">Закон</h1>
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="path">
+    <form class="w-100 d-flex justify-content-center" formGroupName="container">
+    <select name="container" formControlName="id" #select >
+      <option *ngFor="let one of lawCons" [value]="one.id">{{one.name}}</option>
+    </select>
+    </form>
+    <button type="submit">Оновити</button>
+  </form>
+</div>

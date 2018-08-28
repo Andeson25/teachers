@@ -1,0 +1,68 @@
+.container-fluid {
+  padding: 0 0 200px 0;
+  width: 92%;
+  margin: 0 auto;
+  min-height: 63vh;
+}
+.not-autorized{
+  width: 92%;
+  margin: 0 auto;
+  height: 40vh;
+  background: #ffffff;
+  border: 1px solid #c2c2c2;
+}
+.not-autorized h2{
+  font-size: 18px;
+  font-family: OpenSansBold;
+  line-height: 30px;
+}
+.not-autorized button{
+  cursor: pointer;
+  height: 35px;
+  width: 140px;
+  text-align: center;
+  background-color: #00a3c6;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 35px;
+  margin-top: 40px;
+  font-family: OpenSansBold;
+
+}
+.heading{
+  border-left: 10px solid #00a3c6;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.heading h2{
+  font-size: 24px;
+  margin-left: 12px;
+  font-family: OpenSansBold;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+thead{
+  vertical-align: middle!important;
+}
+button:hover{
+  background-color: #0184a0!important;
+}
+.heading button{
+  margin: auto 0;
+  cursor: pointer;
+  height: 30px;
+  width: 140px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #00a3c6;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: OpenSansBold;
+}
+
+@media (max-width: 797.98px) {
+
+}

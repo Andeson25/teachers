@@ -1,0 +1,28 @@
+<div class="container pb-5 d-flex justify-content-start align-items-center flex-column">
+  <h2>Оновлення курсу</h2>
+  <form class="   container row m-0" [formGroup]="courseForm" (ngSubmit)="addCourse(imageForm)" #imageForm>
+    <div class="col-3">
+      <figure class="m-0"  [ngClass]="{'background':img==null||img==undefined}">
+        <img *ngIf="img!=null||img!=undefined||img==''" src="{{img}}" alt="img">
+      </figure>
+      <input (change)="readUrl($event)" class="d-none" id="file" type="file" name="file">
+      <label style="width: 100%; text-align: center" for="file">Додати фото</label>
+    </div>
+    <div class="col-9">
+      <input type="number" formControlName="id" class="d-none">
+    <input type="text" placeholder="header" formControlName="header">
+
+    <input type="text" placeholder="link" formControlName="link">
+    <select name="category" formControlName="courseCategory" #catSel>
+      <option disabled selected value="null">Виберіть категорію</option>
+      <option *ngFor="let one of categories" [ngValue]="one">{{one.name}}</option>
+    </select>
+    <select name="type" formControlName="type">
+      <option disabled selected value="null">Виберіть type</option>
+      <option *ngFor="let key of getTypeKeys()" [ngValue]="key">{{types.get(key)}}</option>
+    </select>
+      <textarea type="text" placeholder="description" formControlName="description"></textarea>
+    </div>
+    <input class="mt-5 align-self-center"  type="submit" value="ОНОВИТИ">
+  </form>
+</div>

@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <div [ngClass]="{'d-flex':isAuth==false, 'd-none': isAuth==true}"
+       class="not-autorized  align-items-center p-4 justify-content-center flex-column">
+    <h2>Переглядати сторінку "Форум" можуть лише авторизовані користувачі.</h2>
+    <button class="mt-3 d-flex align-items-center justify-content-center" routerLink="/sign-in">Увійти</button>
+  </div>
+  <div [ngClass]="{'d-block':isAuth==true, 'd-none': isAuth==false}">
+    <router-outlet></router-outlet>
+  </div>
+</div>

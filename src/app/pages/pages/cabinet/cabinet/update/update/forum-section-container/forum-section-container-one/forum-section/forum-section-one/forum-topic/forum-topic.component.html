@@ -1,0 +1,13 @@
+<div class=" container ">
+  <form class="d-flex flex-column align-items-center" [formGroup]="forumTopicForm" (ngSubmit)="addForumTopic()">
+    <h1>Тема</h1>
+    <input type="text" placeholder="header" formControlName="header">
+    <h3>Секція форуму</h3>
+    <form formGroupName="forumSection">
+      <select formControlName="id">
+        <option *ngFor="let one of forumSections" [value]="one.id">{{one.header}}</option>
+    </select>
+    </form>
+    <button type="submit" class="addForumTopic">Оновити</button>
+  </form>
+</div>

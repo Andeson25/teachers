@@ -1,0 +1,14 @@
+<div style="margin-bottom: 30px;" class=" heading  d-flex align-items-center ">
+  <h2>Навчальні програми</h2>
+</div>
+<div  class="main d-flex row m-0  pl-0">
+  <div *ngIf="teachingProgramsContainers.length!=0" class="content col-md-9 mb-3">
+    <app-teaching-programs-container (deleteCont)="delete($event)" *ngFor="let teachingProgramsContainer of teachingProgramsContainers" [teachingProgramsContainer]="teachingProgramsContainer" ></app-teaching-programs-container>
+    <hr>
+  </div>
+  <div *ngIf="teachingProgramsContainers.length==0" class="content col-md-9 mb-3">
+    <hr>
+    <h2>Немає навчальних програм</h2>
+  </div>
+  <app-advertisment class="col-md-3 pr-0" ></app-advertisment>
+</div>

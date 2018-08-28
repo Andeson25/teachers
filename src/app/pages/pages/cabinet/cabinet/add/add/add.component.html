@@ -1,0 +1,23 @@
+<div class="cont m-0">
+  <div class="d-flex flex-column flex-md-row justify-content-md-around">
+    <button [routerLink]="['article']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      Статтю
+    </button>
+    <button [routerLink]="['course']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Курс
+    </button>
+    <button [routerLink]="['forum-section']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      Форум
+    </button>
+    <button [routerLink]="['law']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Закон
+    </button>
+    <button [routerLink]="['teaching-program']" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{exact: true}"
+    >Навчальну програму
+    </button>
+    <button [routerLink]="['questionnaire']" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{exact: true}"
+    >Опитувальник
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

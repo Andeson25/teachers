@@ -1,0 +1,37 @@
+.container-fluid{
+  width: 92%;
+  margin: 0 auto;
+  padding:  0;
+  min-height: 61vh;
+  padding: 30px 0 0 0;
+  box-sizing: border-box;
+}
+.heading {
+   border-left: 10px solid #00a3c6;
+   padding: 0;
+   box-sizing: border-box;
+   margin: 0 0 30px 0 !important;
+   height: 40px !important;
+ }
+
+.heading h6 {
+  text-transform: uppercase;
+  margin: 0 0 0 12px;
+  font-family: OpenSansBold;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.heading h2 {
+  text-transform: uppercase;
+  margin: 0 0 0 12px;
+  height: 100%;
+  line-height: 1;
+  font-family: OpenSansBold;
+  font-size: 24px;
+}
+.text p{
+  font-size: 18px;
+  line-height: 24px;
+  font-family: OpenSans;
+}

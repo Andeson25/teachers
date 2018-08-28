@@ -1,0 +1,10 @@
+<div class=" m-0 d-flex flex-column flex-md-row justify-content-md-around">
+  <button  [routerLink]="['article']">Стаття</button>
+  <button  [routerLink]="['course']">Курс</button>
+  <button  [routerLink]="['forum']">Форум</button>
+  <button  [routerLink]="['law']">Закон</button>
+  <button  [routerLink]="['program','container']">Навчальна програма</button>
+</div>
+<div class="container-fluid " style="margin-top: 10px;">
+<router-outlet></router-outlet>
+</div>

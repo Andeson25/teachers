@@ -1,0 +1,21 @@
+<form class=" container pb-5 d-flex justify-content-start align-items-center flex-column" [formGroup]="lawForm" (ngSubmit)="addLaw()">
+  <h2>Додати закон про освіту</h2>
+  <input type="name" placeholder="Назва" formControlName="name">
+  <h2>Вкажіть шлях до ресурсу</h2>
+  <input type="text" formControlName="path" placeholder="Шлях до ресурсу...">
+  <h2>Виберіть розділ</h2>
+  <select name="container" formControlName="container" #select (change)="showForm(select)">
+    <option  selected disabled value="">Виберіть розділ</option>
+    <option value="1">Створити новий розділ</option>
+    <option *ngFor="let one of lawContainers" [ngValue]="one">{{one.name}}</option>
+
+
+  </select>
+
+  <form class="d-flex mt-3" [formGroup]="lawContainerForm" *ngIf="checkForm" (ngSubmit)="addLawContainer(select)">
+    <input type="text" placeholder="Назва" formControlName="name">
+    <button style="height: 40px; margin: 0" type="submit" [disabled]="!lawContainerForm.valid">Додати</button>
+  </form>
+
+  <button type="submit" [disabled]="!lawForm.valid&&!validSelect(select)">Додати Закон</button>
+</form>

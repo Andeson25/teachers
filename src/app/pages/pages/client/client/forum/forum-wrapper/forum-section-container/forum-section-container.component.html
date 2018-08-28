@@ -1,0 +1,86 @@
+<!--<div class="container-fluid p-0  w-100">-->
+<!--<div class="heading-forum d-flex align-items-start">-->
+<!--<h2 class="container-name col  ">{{forumSectionContainer.header}}</h2>-->
+<!--<h2 class="container-theme  col-1  " >Тема</h2>-->
+<!--<h2 class="container-replies col-2 col-sm-2 col-md-2" >Відповіді</h2>-->
+<!--<h2 class="container-latest col-3 col-sm-4 col-md-3">Нещодавні повідомлення</h2>-->
+<!--</div>-->
+<!--<div class="forum-section d-flex align-items-center">-->
+<!--<div class="col d-flex align-items-center">-->
+<!--<img src="../../../../../../../assets/svg/speech.svg" alt="">-->
+<!--<a href="">hsadbhsad</a>-->
+<!--</div>-->
+<!--<h2 class="col-3 col-sm-2 col-md-1">213</h2>-->
+<!--<h2 class="col-3 col-sm-2 col-md-2">213</h2>-->
+<!--<div class="col-3 col-sm-4 col-md-3">-->
+<!--<p>02.12.3143</p>-->
+<!--<a href="#">Тема: кек</a>-->
+<!--<p>Ольга карпенко</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="forum-section d-flex align-items-center">-->
+<!--<div class="col d-flex align-items-center">-->
+<!--<img src="../../../../../../../assets/svg/speech.svg" alt="">-->
+<!--<a href="">hsadbhsad</a>-->
+<!--</div>-->
+<!--<h2 class="col-3 col-sm-2 col-md-1">213</h2>-->
+<!--<h2 class="col-3 col-sm-2 col-md-2">213</h2>-->
+<!--<div class="col-3 col-sm-4 col-md-3">-->
+<!--<p>02.12.3143</p>-->
+<!--<a href="#">Тема: кек</a>-->
+<!--<p>Ольга карпенко</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="forumStyle ">
+  <table class="table table-bordered">
+    <thead class="thead-first">
+    <tr>
+      <td>
+        <div class="d-flex justify-content-start align-items-centre m-0 p-0 w-100 h-100">
+          {{forumSectionContainer.header|nou}}
+          <img *ngIf="user.role=='MODERATOR'" (click)="deleteContainer()" class=" delete" style="height: 25px; width: 25px; display: inline-block; margin-left: 10px;  cursor: pointer; z-index: 5" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">Теми</div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">Відповіді</div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">Нещодавні повідомлення</div>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let forumSection of forumSectionContainer.sections">
+      <td class="">
+        <div class="d-flex align-items-center m-0 p-0 w-100 h-100"><img
+          src="/assets/svg/speech.svg"><a href="#" routerLink="{{forumSection.id|nou}}">{{forumSection.header|nou}}</a><img *ngIf="user.role=='MODERATOR'" (click)="delete(forumSection)" class=" delete" style="height: 25px; width: 25px; display: inline-block; margin-left: 10px;  cursor: pointer; z-index: 5" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">
+          {{forumSection.forumTopics.length|nou}}
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">{{countAllMessages(forumSection)}}</div>
+      </td>
+      <td>
+        <div *ngIf="countAllMessages(forumSection)!=0&&!isNullOrUndefined(forumSection)" class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100 flex-column"><p class="date">
+          {{findMax(forumSection).datetime|date|nou}}</p>
+          <p class="theme ">Тема: {{newestForumTopic.header|nou}}</p>
+          <p  class="author">
+            {{newestForumMessage.from.name|nou}} {{newestForumMessage.from.lastname|nou}}</p>
+        </div>
+        <div *ngIf="countAllMessages(forumSection)==0" class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100 flex-column"><p class="date">
+         <p class="author">Немає повідомлень</p>
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

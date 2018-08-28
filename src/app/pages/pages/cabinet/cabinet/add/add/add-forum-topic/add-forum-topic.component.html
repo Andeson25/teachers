@@ -1,0 +1,17 @@
+<div class="container  pb-5 d-flex justify-content-start align-items-center flex-column">
+  <h2>+ forum topic</h2>
+  <form class="container d-flex justify-content-start align-items-center flex-column" [formGroup]="forumTopicForm" (ngSubmit)="addForumTopic()">
+    <input type="text" placeholder="header" formControlName="header">
+    <input type="datetime-local" placeholder="time" formControlName="time">
+
+    <h3>Секція форуму</h3>
+
+    <select name="forumSections" formControlName="forumSections">
+      <option disabled selected value="null">Виберіть категорію</option>
+      <option *ngFor="let one of forumSections" [ngValue]="one">{{one.header}}</option>
+    </select>
+
+    <input type="submit" class="addForumTopic" value="add">
+  </form>
+
+</div>

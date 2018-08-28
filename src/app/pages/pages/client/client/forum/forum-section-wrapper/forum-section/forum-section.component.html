@@ -1,0 +1,63 @@
+<div class="heading d-flex align-items-centre justify-content-start">
+  <h2>{{forumSection.header|nou}}</h2>
+</div>
+<div class="forumStyle ">
+  <table class="table table-bordered">
+    <thead class="thead-first">
+    <tr>
+      <td>
+        <div class="d-flex justify-content-start align-items-centre m-0 p-0 w-100 h-100">Теми</div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">Автор</div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">Відповіді</div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">Оновлення</div>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="scroll" *ngFor="let forumTopic of forumTopics ">
+      <td class="">
+        <div class="d-flex align-items-center m-0 p-0 w-100 h-100"><img
+          src="../../../../../../../../assets/svg/speech.svg"><a href="#"
+                                                                 [routerLink]="['topic/',forumTopic.id]">{{forumTopic.header|nou}}</a> <img *ngIf="user.role=='MODERATOR'" (click)="deleteTopic(forumTopic)" class=" delete" style="height: 25px; width: 25px; display: inline-block; margin-left: 10px;  cursor: pointer; z-index: 5" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">
+          {{get(getUser(forumTopic.author).name|nou)+' '+get(getUser(forumTopic.author).lastname|nou)}}
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center align-items-centre m-0 p-0 w-100 h-100">
+          <p style="margin-bottom: 0; line-height: 300%; height: auto">{{forumTopic.messages.length|nou}}</p>
+        </div>
+      </td>
+      <td>
+        <div *ngIf="forumTopic.messages.length!=0&&!isNullOrUndefined(forumTopic.messages)" class="d-flex flex-column  justify-content-center align-items-centre m-0 p-0 w-100 h-100">
+          <p class="date">{{getMaxMessage(forumTopic).datetime|date|nou}}</p>
+          <p class="name">{{getMaxMessage(forumTopic).from.name + ' '+ getMaxMessage(forumTopic).from.lastname}} </p>
+        </div>
+        <div *ngIf="forumTopic.messages.length==0||isNullOrUndefined(forumTopic.messages)" class="d-flex flex-column  justify-content-center align-items-centre m-0 p-0 w-100 h-100">
+          <p class="date">Немає повідомлень</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"  scrollTo scrollTargetSelector="#scroll" (click)="prePage()" *ngIf="!backBool" >
+        <a class="page-link" href="#" tabindex="-1" >Назад</a>
+      </li>
+      <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" >{{currentPage}}</a></li>
+      <li *ngIf="bool" class="page-item" scrollTo scrollTargetSelector="#scroll">
+        <a class="page-link" (click)="nextPage()"  >Далі</a>
+      </li>
+    </ul>
+  </nav>
+</div>

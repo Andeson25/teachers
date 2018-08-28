@@ -1,0 +1,12 @@
+<div>
+  <button [routerLink]="['../']">Назад</button>
+  <h1 style="display: block; width: 100%; padding: 10px; text-align: center;">Оновити розділ</h1>
+  <form  class="d-flex justify-content-center" [formGroup]="sectionContainerForm" (submit)="update()">
+    <input type="text" formControlName="header">
+    <button type="submit">ОНОВИТИ</button>
+  </form>
+  <div *ngFor="let section of sectionContainer.sections" class="cont d-flex flex-column   justify-content-start align-items-center" [routerLink]="['/cabinet/update/forum/section', section.id]">
+    <h2 style="color: #ffffff">{{section.header|nou}}</h2>
+    <h2 style="color: #ffffff">Кількість тем: {{section.forumTopics.length|nou}}</h2>
+  </div>
+</div>

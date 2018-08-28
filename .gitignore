@@ -1,0 +1,76 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+
+# Node ForumMessages #
+/node_modules/
+/bower_components/
+npm-debug.log
+/npm-debug.log.*
+public/front/node/
+public/front/node_modules/
+public/front/package-lock.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System ForumMessages
+.DS_Store
+Thumbs.db
+
+# dependencies
+/node_modules
+
+
+

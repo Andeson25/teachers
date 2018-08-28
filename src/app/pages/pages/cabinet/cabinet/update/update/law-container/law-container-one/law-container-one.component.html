@@ -1,0 +1,10 @@
+<div >
+  <button [routerLink]="['../']">Назад</button>
+  <form class=" main d-flex align-items-center flex-column mb-5" [formGroup]="containerForm" (submit)="updateContainer()">
+    <input type="text" formControlName="name">
+    <button type="submit">Оновити</button>
+  </form>
+
+
+  <app-law (event)="load($event)" *ngFor="let law of laws" [law]="law" [cont]="lawContainer"></app-law>
+</div>

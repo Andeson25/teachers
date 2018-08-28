@@ -1,0 +1,76 @@
+form{
+  box-sizing: border-box;
+}
+h2{
+  font-size: 24px;
+  line-height: 30px;
+  font-family: OpenSans;
+}
+input{
+  width: 100%;
+  display: block;
+  font-family: OpenSans;
+  padding-left: 10px;
+  font-size: 18px;
+  line-height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf!important;
+  outline: none;
+}
+textarea{
+  outline: none;
+  height: calc( 100% - 40px );
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf!important;
+  width: 100%;
+  float: right;
+  display: block;
+  padding: 10px 10px;
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 24px;
+  resize: none;
+}
+.add-foto{
+  margin: 0;
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
+}
+h3{
+  font-size: 18px;
+  line-height: 24px;
+  width: auto;
+  font-family: OpenSans;
+}
+label, button{
+  padding: 5px 10px;
+  background-color: #00a3c6;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+  border: 0;
+}
+label:hover, button:hover{
+  background-color: #0184a0;
+}
+.add{
+  display: block!important;
+  border-radius: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+.background{
+  background-color: #c0bfbf;
+}
+figure{
+  margin: 0;
+  width: 100%;
+  min-height: 250px;
+  overflow: hidden;
+}

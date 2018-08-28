@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <div class="cont d-flex flex-column justify-content-center align-items-center">
+    <h2>Введіть новий пароль</h2>
+    <input #pas1 type="password" placeholder="пароль" >
+    <input #pas2 type="password" placeholder="повторіть пароль" >
+    <button (click)="sendPassword(pas1.value,pas2.value)">Відправити</button>
+  </div>
+</div>

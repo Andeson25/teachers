@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="sign-in d-flex align-items-center flex-column">
+    <h2 class="">УВІЙТИ</h2>
+    <form [formGroup]="userForm" (submit)="auth()" class="d-flex align-items-center flex-column" action="#">
+      <label class="">
+        ЕЛЕКТРОННА ПОШТА:
+        <input type="email" formControlName="email">
+      </label>
+      <h4>Електронна пошта, яку Ви викорустовували для реєстрації</h4>
+      <label class="">
+        ПАРОЛЬ:
+        <input type="password" formControlName="password">
+      </label>
+      <label style="margin-bottom: 30px;" class="d-flex flex-row justify-content-between forgot">
+        <div class="d-flex align-items-start">
+          <input #check type="checkbox" checked> Запамятати мене
+        </div>
+        <a href="" routerLink="/restore-password">Забули пароль?</a>
+      </label>
+      <button style="margin-bottom: 50px;" type="submit">УВІЙТИ</button>
+      <h3 *ngIf="badPass" style="color: red">Неправильний логін або пароль</h3>
+      <h3 style="margin-bottom: 23px;" class="w-100 d-flex  justify-content-center">Ви ще не <a routerLink="/sign-up"
+                                                                                                href="">
+        зареєструвались</a>?</h3>
+      <button routerLink="/sign-up">СТВОРИТИ ОБЛІКОВИЙ ЗАПИС</button>
+    </form>
+  </div>
+</div>

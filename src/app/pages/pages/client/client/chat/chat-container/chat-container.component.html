@@ -1,0 +1,17 @@
+<div  class="container-fluid m-0 d-flex justify-content-between" [routerLink]="['room',chatRoom.id]">
+  <div class="left h-100 d-flex">
+    <span class="rounded-circle align-self-center " [style.backgroundImage]="'url('+ (image) +')'"></span>
+    <div class="data">
+      <div class="name">
+        <h2>{{name|nou}}</h2>
+      </div>
+      <div class="lastMessage">
+        <h3 class="m-0">{{getLastMessage()}}</h3>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="chatRoom.messages.length!=0" class="right h-100 d-flex flex-column">
+    <h3 class="m-0 align-self-start">{{getLastDateTime()}}</h3>
+    <img *ngIf="getLastMessage().substring(0,18)=='Нове повідомлення:'" src="../../../../../../../assets/svg/alarm.svg" style="height: 18px; width: auto;" class="align-self-end" alt="">
+  </div>
+</div>

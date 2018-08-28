@@ -1,0 +1,101 @@
+<div id="scroll" class="container-fluid m-0" *ngIf="bool">
+  <div class="heading d-flex align-items-centre justify-content-start">
+    <h2>Тема: {{forumTopic.header|nou}}</h2>
+  </div>
+  <table class="table-bordered table ">
+    <thead>
+    <tr>
+      <th>Автор теми</th>
+      <th>Дата: {{forumTopic.datetime|date}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div class=" h-100 w-100 d-flex flex-column align-items-center  author-name pb-5">
+          <div class="info-teacher d-flex justify-content-center justify-content-md-start flex-column">
+            <h2 class="text-md-left text-center" >{{forumTopic.author.name}} {{forumTopic.author.lastname}}</h2>
+            <img src="{{forumTopic.author.image|ImgPipe}}" class="align-self-center" alt="Author">
+            <p *ngIf="this.forumTopic.author.incumbency!='none'" class="d-flex justify-content-center justify-content-md-start">{{incumbency[forumTopic.author.incumbency]}}:</p>
+            <div *ngIf="this.forumTopic.author.incumbency!='none'">
+            <h3  class="d-flex justify-content-center justify-content-md-start text-center" *ngFor="let spec of forumTopic.author.specializations">{{spec.name}}</h3>
+            </div>
+            <h3 *ngIf="this.forumTopic.author.incumbency=='none'">Немає інформації</h3>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class=" h-100 w-100 d-flex flex-column align-items-center author-content">
+          <div class="author-topic-content h-100 w-100 d-flex ">
+            <pre style="font-family: OpenSans; font-size: 16px; line-height: 24px;">{{forumTopic.text|nou}}</pre>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <table  *ngFor="let forumMessageOne of forumMessages; let i = index;" class="table-bordered">
+    <thead>
+    <tr>
+      <th></th>
+      <!--<span>{{forumMessage.from.name|nou}}</span>-->
+      <th>Дата: {{forumMessageOne.datetime|date|nou}} #{{i+1}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div class=" h-100 w-100 d-flex flex-column align-items-center  author-name pb-5">
+          <div class="info-teacher d-flex flex-column">
+          <h2 class=" text-md-left text-center" >{{forumMessageOne.from.name}} {{forumMessageOne.from.lastname}}</h2>
+          <img src="{{forumMessageOne.from.image|ImgPipe}}" class="align-self-center" alt="Author">
+          <p class="d-flex justify-content-center justify-content-md-start">{{incumbency[forumMessageOne.from.incumbency]}}:</p>
+          <h3 class="d-flex justify-content-center justify-content-md-start" *ngFor="let spec of forumMessageOne.from.specializations">{{spec.name}}</h3>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class=" h-100 w-100 d-flex flex-column align-items-center author-content">
+          <div class="author-topic-content h-100 w-100 d-flex position-relative">
+            <img *ngIf="user.role=='MODERATOR'"  (click)="deleteMessage(forumMessageOne)" class=" delete " style="position: absolute; height: 25px; width: 25px; display: inline-block; right: 10px; top: 20px;  cursor: pointer; z-index: 5" src="../../../../../../../../assets/svg/cancel-button.svg" alt="Видалити">
+            <pre style="font-family: OpenSans; font-size: 16px; line-height: 24px;">{{forumMessageOne.text}}</pre>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-start">
+      <li class="page-item"  scrollTo scrollTargetSelector="#scroll" (click)="prePage()" *ngIf="!backBool" >
+        <a class="page-link" href="#" tabindex="-1" >Назад</a>
+      </li>
+      <li class="page-item"><a class="page-link" scrollTo scrollTargetSelector="#scroll" >{{currentPage}}</a></li>
+      <li *ngIf="boolPage" class="page-item" scrollTo scrollTargetSelector="#scroll">
+        <a class="page-link" (click)="nextPage()"  >Далі</a>
+      </li>
+    </ul>
+  </nav>
+  <table class="write-message ">
+    <thead>
+    <tr>
+      <th>Нова відповідь:</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div class="h-100 w-100">Текст повідомлення</div>
+      </td>
+      <td>
+        <div class="w-100 h-100 d-flex flex-column align-items-end"><textarea #textareaElement name=""></textarea>
+          <div class="btn-wrap d-flex justify-content-center">
+            <button class="" (click)="send(textareaElement)">Додати відповідь</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

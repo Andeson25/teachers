@@ -1,0 +1,49 @@
+hr{
+  margin: 0 ;
+  border-color: #CBCBCB;
+  border-width: .3vh;
+}
+.container-fluid{
+  padding: 20px 0!important;
+  margin: 0;
+}
+.container-fluid h2{
+
+  font-family: OpenSans!important;
+  font-weight: lighter;
+  font-size: 21px;
+  line-height: 24px;
+  margin: 0;
+}
+.name{
+  height: auto;
+  margin: 0;
+
+}
+img{
+  margin-right: 6px;
+  height: 15px;
+  width: auto;
+}
+a{
+  height: 3vh;
+  color: #00a3c6;
+  margin-left: 22px;
+}
+a:hover{
+  color: #0184a0;
+}
+a{
+  font-size: 16px;
+}
+a svg{
+  margin-left: .5vw;
+  height: 10px;
+  transform: rotate(180deg);
+}
+svg g g path{
+  fill: #00a3c6;
+}
+a:hover svg g g path{
+  fill: #0184a0;
+}

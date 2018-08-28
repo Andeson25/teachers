@@ -1,0 +1,20 @@
+<div class=" cont d-flex  flex-column  ">
+  <button class="position-absolute" [routerLink]="['/']"
+  >На головну
+  </button>
+  <div class="d-flex justify-content-around w-100">
+    <button  [routerLink]="['add']" [routerLinkActive]="['active']"
+            >Додати
+    </button>
+    <button  [routerLink]="['check']" [routerLinkActive]="['active']"
+            >Перевірити користувачів
+    </button>
+    <button  [routerLink]="['update']"  [routerLinkActive]="['active']"
+             >Оновити
+    </button>
+  </div>
+  <div class="wrap">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
